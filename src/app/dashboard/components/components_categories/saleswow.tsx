@@ -112,8 +112,8 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
                                     type="monotone"
                                     strokeWidth={2}
                                     dataKey="sale_ly"
-                                    isAnimationActive={true}
-                                    animationDuration={3000}
+                                    // isAnimationActive={true}
+                                    // animationDuration={3000}
                                     activeDot={{
                                         r: 4,
                                         style: {
@@ -133,8 +133,8 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
                                     type="monotone"
                                     dataKey="sale_cy"
                                     strokeWidth={4}
-                                    isAnimationActive={true}
-                                    animationDuration={3000}
+                                    // isAnimationActive={true}
+                                    // animationDuration={3000}
                                     //className="fill-primary"
                                     activeDot={{
                                         r: 8,
