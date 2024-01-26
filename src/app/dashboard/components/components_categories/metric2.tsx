@@ -24,20 +24,20 @@ export function SimpleLineChart() {
 
     const [isLoading, setIsLoading] = useState(true);
 
-    const [clusters, setClusters] = useState<ClusterItem[]>([]);
+    // const [clusters, setClusters] = useState<ClusterItem[]>([]);
 
-    useEffect(() => {
-        fetch('/api')
-            .then(response => response.json())
-            .then(data => {
-                setClusters(data.clusters);
-                setIsLoading(false);
+    // useEffect(() => {
+    //     fetch('/api')
+    //         .then(response => response.json())
+    //         .then(data => {
+    //             setClusters(data.clusters);
+    //             setIsLoading(false);
 
-            })
-            .catch(error => {
-                console.log('There was a problem with the fetch operation: ' + error.message);
-            });
-    }, []);
+    //         })
+    //         .catch(error => {
+    //             console.log('There was a problem with the fetch operation: ' + error.message);
+    //         });
+    // }, []);
 
     const colors = ["#adfa1d", "#ffa500", "#8a2be2", "#1e90ff", "#ff69b4"];
 
@@ -68,9 +68,8 @@ export function SimpleLineChart() {
           <CardTitle className="text-sm font-medium">Clientes</CardTitle>
         </CardHeader>
         <CardContent>   
-          <ResponsiveContainer width="100%" height={350}>
+          {/* <ResponsiveContainer width="100%" height={350}>
           <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-          {/* <CartesianGrid strokeDasharray="3 3" className="bg-muted" /> */}
             <XAxis
               type="number"
               dataKey="frequency"
@@ -108,7 +107,7 @@ export function SimpleLineChart() {
                     generateScatterComponents(clusters, colors)
                 }
           </ScatterChart>
-          </ResponsiveContainer>
+          </ResponsiveContainer> */}
               
         </CardContent>
       </Card>
