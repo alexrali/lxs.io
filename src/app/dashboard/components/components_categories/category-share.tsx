@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { ResponsiveTreeMap } from '@nivo/treemap'
+// import { ResponsiveTreeMap } from '@nivo/treemap'
 
 
 const data =
@@ -437,7 +437,7 @@ export default function CategoryShare() {
             </CardHeader>
             <CardContent className="pb-4">
                 <div className="h-[350px]">
-                    <ResponsiveTreeMap
+                    {/* <ResponsiveTreeMap
                         data={data}
                         identity="name"
                         value="loc"
@@ -474,7 +474,7 @@ export default function CategoryShare() {
                                 ]
                             ]
                         }}
-                    />
+                    /> */}
                 </div>
             </CardContent>
         </Card>

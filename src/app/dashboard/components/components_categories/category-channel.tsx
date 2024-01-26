@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 
-import { ResponsiveMarimekko } from '@nivo/marimekko'
+// import { ResponsiveMarimekko } from '@nivo/marimekko'
 import { useTheme } from 'next-themes'
 
 
@@ -75,7 +75,7 @@ export default function CategoryChannel() {
                 <CardDescription>Channel description</CardDescription>
             </CardHeader>
             <CardContent>
-                <div className="h-[200px]">
+                {/* <div className="h-[200px]">
                     <ResponsiveMarimekko
                         data={data}
                         id="statement"
@@ -160,7 +160,7 @@ export default function CategoryChannel() {
                             }
                         ]}
                     />
-                </div>
+                </div> */}
             </CardContent>
         </Card>
     )

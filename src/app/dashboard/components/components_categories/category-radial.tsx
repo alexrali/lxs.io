@@ -1,6 +1,6 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { ResponsivePie } from '@nivo/pie'
+// import { ResponsivePie } from '@nivo/pie'
 import { useTheme } from 'next-themes'
 
 const data =
@@ -53,7 +53,7 @@ export default function CategoryRadial() {
             </CardHeader>
             <CardContent className="pb-4">
                 <div className="h-[230px]">
-                    <ResponsivePie
+                    {/* <ResponsivePie
                         data={data}
                         margin={{ top: 20, right: 5, bottom: 20, left: 5 }}
                         innerRadius={0.6}
@@ -107,9 +107,9 @@ export default function CategoryRadial() {
                                     </div>
                                 </div>
                             </div>
-                        )}
+                        )} 
 
-                    // legends={[
+                    //// legends={[
                     //     {
                     //         anchor: 'bottom',
                     //         direction: 'row',
@@ -134,7 +134,7 @@ export default function CategoryRadial() {
                     //         ]
                     //     }
                     // ]}
-                    />
+                   //// />*/}
                 </div>
             </CardContent>
         </Card>

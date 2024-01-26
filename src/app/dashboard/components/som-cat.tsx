@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { ResponsiveAreaBump } from '@nivo/bump'
+// import { ResponsiveAreaBump } from '@nivo/bump'
 
 
 const data = [
@@ -162,51 +162,51 @@ export default function MyResponsiveAreaBump() {
             </CardHeader>
             <CardContent className="pb-4">
                 <div className="h-[350px]">
-                    <ResponsiveAreaBump
+                    {/* <ResponsiveAreaBump
                         data={data}
                         margin={{ top: 30, right: 80, bottom: 30, left: 80 }}
                         spacing={8}
                         colors={{ scheme: 'set1' }}
                         blendMode="multiply"
-                        // defs={[
-                        //     {
-                        //         id: 'dots',
-                        //         type: 'patternDots',
-                        //         background: 'inherit',
-                        //         color: '#38bcb2',
-                        //         size: 4,
-                        //         padding: 1,
-                        //         stagger: true
-                        //     },
-                        //     {
-                        //         id: 'lines',
-                        //         type: 'patternLines',
-                        //         background: 'inherit',
-                        //         color: '#eed312',
-                        //         rotation: -45,
-                        //         lineWidth: 6,
-                        //         spacing: 10
-                        //     }
-                        // ]}
-                        // fill={[
-                        //     {
-                        //         match: {
-                        //             id: 'CoffeeScript'
-                        //         },
-                        //         id: 'dots'
-                        //     },
-                        //     {
-                        //         match: {
-                        //             id: 'TypeScript'
-                        //         },
-                        //         id: 'lines'
-                        //     }
-                        // ]}
+                        defs={[
+                            {
+                                id: 'dots',
+                                type: 'patternDots',
+                                background: 'inherit',
+                                color: '#38bcb2',
+                                size: 4,
+                                padding: 1,
+                                stagger: true
+                            },
+                            {
+                                id: 'lines',
+                                type: 'patternLines',
+                                background: 'inherit',
+                                color: '#eed312',
+                                rotation: -45,
+                                lineWidth: 6,
+                                spacing: 10
+                            }
+                        ]}
+                        fill={[
+                            {
+                                match: {
+                                    id: 'CoffeeScript'
+                                },
+                                id: 'dots'
+                            },
+                            {
+                                match: {
+                                    id: 'TypeScript'
+                                },
+                                id: 'lines'
+                            }
+                        ]}
 
                          startLabel="id"
                          endLabel="id"
-                        // startLabel={datum => datum.id}
-                        // endLabel={datum => datum.id}
+                        startLabel={datum => datum.id}
+                        endLabel={datum => datum.id}
 
                         axisTop={{
                             tickSize: 5,
@@ -224,7 +224,7 @@ export default function MyResponsiveAreaBump() {
                             legendPosition: 'middle',
                             legendOffset: 32
                         }}
-                    />
+                    />*/}
                 </div>
             </CardContent>
         </Card>
