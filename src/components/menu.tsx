@@ -26,16 +26,16 @@ import { getProviders } from '@/app/actions/getProviders';
 
 export function Menu() {
 
-  const [providers, setProviders] = useState<string[]>([]);
+  // const [providers, setProviders] = useState<string[]>([]);
 
-  useEffect(() => {
-    const fetchProviders = async () => {
-      const fetchedProviders = await getProviders();
-      setProviders(fetchedProviders);
-    };
+  // useEffect(() => {
+  //   const fetchProviders = async () => {
+  //     const fetchedProviders = await getProviders();
+  //     setProviders(fetchedProviders);
+  //   };
 
-    fetchProviders();
-  }, []);
+  //   fetchProviders();
+  // }, []);
 
   const { setSidebarVisibility } = React.useContext(SidebarContext);
 
@@ -132,11 +132,11 @@ export function Menu() {
             <MenubarSub>
               <MenubarSubTrigger>Proveedores</MenubarSubTrigger>
               <MenubarSubContent>
-                {providers.map((provider, index) => (
+                {/* {providers.map((provider, index) => (
                   <MenubarItem key={index}>
                     {provider}
                   </MenubarItem>
-                ))}
+                ))} */}
               </MenubarSubContent>
             </MenubarSub>
           </MenubarSub>
