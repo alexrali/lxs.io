@@ -24,30 +24,31 @@ interface ClusterItem {
 export default function Clients() {
 
     const [isLoading, setIsLoading] = useState(true);
-    const [clusters, setClusters] = useState<ClusterItem[]>([]);
 
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await Promise.race([
-            fetch('/api').then((res) => res.json()),
-            new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 5000)),
-          ]);
+    // const [clusters, setClusters] = useState<ClusterItem[]>([]);
+
+    // useEffect(() => {
+    //   const fetchData = async () => {
+    //     try {
+    //       const response = await Promise.race([
+    //         fetch('/api').then((res) => res.json()),
+    //         new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 5000)),
+    //       ]);
     
-          setClusters(response.clusters);
-        } catch (error) {
-          if (error instanceof Error) {
-            console.log('There was a problem with the fetch operation: ' + error.message);
-          } else {
-            console.log('There was a problem with the fetch operation');
-          }
-        } finally {
-          setIsLoading(false);
-        }
-      };
+    //       setClusters(response.clusters);
+    //     } catch (error) {
+    //       if (error instanceof Error) {
+    //         console.log('There was a problem with the fetch operation: ' + error.message);
+    //       } else {
+    //         console.log('There was a problem with the fetch operation');
+    //       }
+    //     } finally {
+    //       setIsLoading(false);
+    //     }
+    //   };
     
-      fetchData();
-    }, []);
+    //   fetchData();
+    // }, []);
     
 
     const colors = ["#adfa1d", "#ffa500", "#8a2be2", "#1e90ff", "#ff69b4"];
@@ -78,9 +79,9 @@ export default function Clients() {
           <CardTitle className="text-sm font-medium">Clientes</CardTitle>
         </CardHeader>
         <CardContent>   
-          <ResponsiveContainer width="100%" height={350}>
+          {/* <ResponsiveContainer width="100%" height={350}>
           <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-          {/* <CartesianGrid strokeDasharray="3 3" className="bg-muted" /> */}
+         
             <XAxis
               type="number"
               dataKey="frequency"
@@ -119,7 +120,7 @@ export default function Clients() {
                   }
           </ScatterChart>
           </ResponsiveContainer>
-              
+               */}
         </CardContent>
       </Card>
       )}
