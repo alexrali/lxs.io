@@ -10,7 +10,7 @@ export const getProviders = async () => {
     });
 
     // Extract the 'provider' values and remove duplicates
-    const providers = [...new Set(performances.map(performance => performance.provider))];
-
+    //const providers = [...new Set(performances.map(performance => performance.provider))];
+    const providers = performances.map(performance => performance.provider);
     return providers;
 }
