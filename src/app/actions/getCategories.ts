@@ -58,8 +58,8 @@ export const getCategories = async ( filter: string ) => {
         
         // Convert the sum of icp to a float and the average of doh to an integer
         const sumIcp = aggregateResults._sum.icp ? Number(aggregateResults._sum.icp) : 0;
-        const avgDoh = aggregateResults._avg.doh ? Number(aggregateResults._avg.doh) : 0;
-        
+        const avgDoh = aggregateResults._avg.doh ? (parseInt(aggregateResults._avg.doh) || 0) : 0;
+                
         // Get the sum of ytd_cy, ytd_ly, mtd_ly, and mtd_cy
         const sumYtdCy = aggregateResults._sum.ytd_cy ? Number(aggregateResults._sum.ytd_cy) : 0;
         const sumYtdLy = aggregateResults._sum.ytd_ly ? Number(aggregateResults._sum.ytd_ly): 0;
