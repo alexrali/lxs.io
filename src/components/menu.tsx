@@ -30,7 +30,8 @@ export function Menu() {
 
   useEffect(() => {
     const fetchProviders = async () => {
-      const providers = await getProviders();
+      // const providers = await getProviders();
+      const [providers, setProviders] = useState<string[]>([]);
       setProviders(providers);
     };
 
