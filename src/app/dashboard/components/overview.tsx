@@ -7,7 +7,13 @@ import { useState, useEffect } from "react";
 import { Bar, BarChart, CartesianAxis, CartesianGrid, Cell, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 
 
-const CustomTooltip = ({ active, payload, label }) => {
+interface CustomTooltipProps {
+  active: boolean;
+  payload: any[]; // Replace 'any' with the actual type of the payload
+  label: string;
+}
+
+const CustomTooltip = ({ active, payload, label } : CustomTooltipProps) => {
   if (active && payload && payload.length) {
     return (
       <div className="rounded-lg border bg-background p-2 shadow-sm">
@@ -46,7 +52,16 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
-const CustomCursor = ({ payload, x, y, width, height }) => {
+interface CustomCursorProps {
+  payload: any[]; // Replace 'any' with the actual type of the payload
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
+
+const CustomCursor = ({ payload, x, y, width, height }: CustomCursorProps) => {
   return (
     <rect
       x={x}

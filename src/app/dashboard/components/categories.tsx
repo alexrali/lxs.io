@@ -54,7 +54,7 @@ export default function Categories() {
         <CardsStats />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
           <div className="space-y-4 xl:space-y-4">
-            <ListCategories />
+            <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV                         " />
           </div>
           <div className="space-y-4 xl:space-y-4">
             <CardsChat />

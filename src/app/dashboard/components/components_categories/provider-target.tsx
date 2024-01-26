@@ -58,6 +58,17 @@ interface Category {
     doh: number | null;
 }
 
+interface CategoriesResult {
+    categories: Category[];
+    sumIcp: number;
+    avgDoh: number;
+    sumYtdCy: number;
+    sumYtdLy: number;
+    sumMtdLy: number;
+    sumMtdCy: number;
+    pctDif: number;
+  }
+
 export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV                         " }: providerTargetProps) {
 
     const { theme } = useTheme();
@@ -89,7 +100,7 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                 sumMtdLy,
                 sumMtdCy,
                 pctDif,
-            } = await getCategories(filter);
+            } = await getCategories(filter) as CategoriesResult;
             //setCategories(categories);
             // You can set the sum of icp and the average of doh to state variables here
             // For example:
@@ -135,7 +146,7 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                                 dataKey="LastYear"
                                 position="insideLeft"
                                 offset={10}
-                                formatter={(value) => { return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + ' ly' }}
+                                formatter={(value: number) => { return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + ' ly' }}
                                 className="text-xs font-bold fill-muted-foreground tracking-tighter"
                             />
                             </Bar >
@@ -144,7 +155,7 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                                 dataKey="Difference"
                                 position="insideLeft"
                                 offset={10}
-                                formatter={(value) => { return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}}
+                                formatter={(value: number) => { return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}}
                                 className="text-xs font-bold fill-muted-foreground tracking-tighter"
                             />
                             </Bar>

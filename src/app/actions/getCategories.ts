@@ -76,8 +76,6 @@ export const getCategories = async ( filter: string ) => {
         console.log(`Sum of MTD_LY: ${aggregateResults._sum.mtd_ly}`);
         console.log(`Sum of MTD_CY: ${aggregateResults._sum.mtd_cy}`);
 
-
-        
         return {
             categories: processedCategories,
             sumIcp: sumIcp,

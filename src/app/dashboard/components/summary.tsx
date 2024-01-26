@@ -136,7 +136,7 @@ export default function Summary() {
       <div className="col-span-1">
         {/* <CategoryRadial />  is not working  */}
         <div className="mt-4">
-          <ListCategories />
+          <ListCategories filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV                         "/>
         </div>
       </div>
     </div> 

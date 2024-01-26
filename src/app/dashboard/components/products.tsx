@@ -64,10 +64,10 @@ const Products = () => {
 
             <div className="col-span-1 space-y-2">
                 {/* This is a card */}
-                <ProviderInventoryValue />
+                <ProviderInventoryValue filter ="KIMBERLY-CLARK DE MEXICO, SAB DE CV                         "/>
             </div>
 
-            <ListCategories />
+            <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV                         " />
         </div>
 
 

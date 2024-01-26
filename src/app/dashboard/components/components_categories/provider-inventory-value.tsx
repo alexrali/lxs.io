@@ -91,6 +91,13 @@ interface ProviderInventoryValueProps {
     filter: string;
 }
 
+interface CategoriesResult {
+    categories: Category[];
+    sumIcp: number;
+    avgDoh: number;
+    // Include other properties returned by getCategories...
+  }
+
 export default function ProviderInventoryValue({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV                         " }: ProviderInventoryValueProps) {
     const [activeIndex, setActiveIndex] = useState(0);
 
@@ -107,7 +114,7 @@ export default function ProviderInventoryValue({ filter = "KIMBERLY-CLARK DE MEX
 
     useEffect(() => {
         const fetchCategories = async () => {
-            const { categories, sumIcp, avgDoh } = await getCategories(filter);
+            const { categories, sumIcp, avgDoh } = await getCategories(filter) as CategoriesResult;
             setCategories(categories);
             // You can set the sum of icp and the average of doh to state variables here
             // For example:

@@ -113,14 +113,13 @@ export default function ProviderEntry({ filter = "KIMBERLY-CLARK DE MEXICO, SAB 
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
-
-
                 <div className="mt-3">
                     {/* <p className="text-1xl">This month your stores have sold All Outlets</p> */}
                     <p className="text-2xl font-bold tracking-tighter">$ 331,224.74</p>
-                    <p className="text-xs font-medium text-muted-foreground tracking-tighter">$132,569.46 more than this time last month!</p>
-                </div>
-            </CardContent>
+                    <p className="text-xs font-medium text-muted-foreground tracking-tighter">{'\''}</p>
+                    </div>
+                    
+                </CardContent>
         </Card>
     );
 }

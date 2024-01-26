@@ -14,7 +14,7 @@ import {
 import { CategoryDetails } from "./category-details"
 import { CaretUpIcon, CaretDownIcon } from "@radix-ui/react-icons";
 import { getCategories } from "@/app/actions/getCategories";
-import { Bar, BarChart, CartesianGrid, Cell, ComposedChart, LabelList, Legend, Line, LineChart, RadialBar, RadialBarChart, ResponsiveContainer, XAxis, YAxis, Tooltip } from "recharts";
+import { Bar, BarChart, CartesianGrid, Cell, ComposedChart, LabelList, Legend, Line, LineChart, RadialBar, RadialBarChart, ResponsiveContainer, XAxis, YAxis, Tooltip, TooltipProps } from "recharts";
 import { Badge, badgeVariants } from "@/components/ui/badge";
 import { useTheme } from "next-themes";
 
@@ -33,11 +33,32 @@ interface Category {
     doh: number | null;
 }
 
+interface CustomTooltipProps {
+    active: boolean;
+    payload: any[]; // Replace 'any' with the actual type of your payload
+    label: string;
+  }
+
+  interface CategoriesResult {
+    categories: Category[];
+    sumIcp: number;
+    avgDoh: number;
+    // Include other properties returned by getCategories...
+  }
+  
+
+  interface StarProps {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  }
+
 interface ListCategoriesProps {
     filter: string;
 }
 
-const CustomTooltip = ({ active, payload, label }) => {
+const CustomTooltip = ({ active, payload, label }: CustomTooltipProps) => {
     if (active && payload && payload.length) {
 
         const actualValue = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(payload[0].payload.icp);
@@ -71,7 +92,7 @@ const CustomTooltip = ({ active, payload, label }) => {
     return null;
 };
 
-const Star = ({ x, y, width, height }) => {
+const Star = ({ x, y, width, height }: StarProps) => {
     // calculate the points of the star
     const cx = x + width / 2;
     const cy = y + height / 2;
@@ -92,7 +113,7 @@ const Star = ({ x, y, width, height }) => {
 export default function ListCategories({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV                         " }: ListCategoriesProps) {
 
     const [categories, setCategories] = useState<Category[]>([]);
-    const [activeIndex, setActiveIndex] = useState(null);
+    const [activeIndex, setActiveIndex] = useState<number | null>(null);
     const [sumIcp, setSumIcp] = useState(0);
     const [avgDoh, setAvgDoh] = useState(0);
     const { theme: mode } = useTheme();
@@ -102,7 +123,7 @@ export default function ListCategories({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
 
     useEffect(() => {
         const fetchCategories = async () => {
-            const { categories, sumIcp, avgDoh } = await getCategories(filter);
+            const { categories, sumIcp, avgDoh } = await getCategories(filter) as CategoriesResult;
             setCategories(categories);
             // You can set the sum of icp and the average of doh to state variables here
             // For example:
@@ -157,7 +178,7 @@ export default function ListCategories({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                                     categories.map((entry, index) => (
                                         <Cell
                                             cursor="pointer"
-                                            fill={entry.doh < 10 ? '#db9595' : index === activeIndex ? '#23D7FF' : MUTED_COLOR} // change color based on doh value
+                                            fill={entry.doh && entry.doh < 10 ? '#db9595' : index === activeIndex ? '#23D7FF' : MUTED_COLOR} // change color based on doh value
                                             key={`cell-${index}`}
                                             //opacity={index === activeIndex ? 1 : 0.25}
                                             onMouseOver={() => setActiveIndex(index)}
@@ -166,7 +187,7 @@ export default function ListCategories({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                                     ))
                                 }
                                 <LabelList
-                                    dataKey="category"
+                                    dataKey="category"    
                                     position="insideLeft"
                                     offset={5}
                                     className="text-xs font-bold fill-muted-foreground tracking-tighter"
@@ -175,7 +196,7 @@ export default function ListCategories({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                                     dataKey="doh"
                                     position="right"
                                     offset={10}
-                                    formatter={(value) => `${Math.round(value)}`}
+                                    formatter={(value: number) => `${Math.round(value)}`}
                                     className="text-xs font-bold fill-muted-foreground tracking-tighter"
                                 />
                             </Bar>
