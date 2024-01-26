@@ -1,0 +1,85 @@
+
+{
+  "recipes": [
+    {
+      "id": 1,
+      "title": "Vegan Pasta",
+      "image": "pasta.jpg",
+      "time": "30 minutes",
+      "description": "Delicious vegan pasta with fresh vegetables.",
+      "vegan": true
+    },
+    {
+      "id": 2,
+      "title": "Vegan Burger",
+      "image": "burger.jpg",
+      "time": "20 minutes",
+      "description": "Tasty vegan burger made with plant-based ingredients.",
+      "vegan": true
+    },
+    {
+      "id": 3,
+      "title": "Vegan Curry",
+      "image": "curry.jpg",
+      "time": "45 minutes",
+      "description": "Spicy and flavorful vegan curry with aromatic spices.",
+      "vegan": true
+    },
+    {
+      "id": 4,
+      "title": "Vegan Salad",
+      "image": "salad.jpg",
+      "time": "15 minutes",
+      "description": "Refreshing vegan salad with mixed greens and tangy dressing.",
+      "vegan": true
+    },
+    {
+      "id": 5,
+      "title": "Vegan Pizza",
+      "image": "pizza.jpg",
+      "time": "25 minutes",
+      "description": "Homemade vegan pizza topped with fresh vegetables and vegan cheese.",
+      "vegan": true
+    },
+    {
+      "id": 6,
+      "title": "Vegan Smoothie",
+      "image": "smoothie.jpg",
+      "time": "10 minutes",
+      "description": "Healthy and delicious vegan smoothie packed with fruits and veggies.",
+      "vegan": true
+    },
+    {
+      "id": 7,
+      "title": "Vegan Stir-Fry",
+      "image": "stir-fry.jpg",
+      "time": "30 minutes",
+      "description": "Quick and easy vegan stir-fry with colorful vegetables.",
+      "vegan": true
+    },
+    {
+      "id": 8,
+      "title": "Vegan Soup",
+      "image": "soup.jpg",
+      "time": "40 minutes",
+      "description": "Warm and comforting vegan soup perfect for chilly days.",
+      "vegan": true
+    },
+    {
+      "id": 9,
+      "title": "Vegan Tacos",
+      "image": "tacos.jpg",
+      "time": "35 minutes",
+      "description": "Flavorful vegan tacos filled with seasoned plant-based protein.",
+      "vegan": true
+    },
+    {
+      "id": 10,
+      "title": "Vegan Dessert",
+      "image": "dessert.jpg",
+      "time": "20 minutes",
+      "description": "Indulgent vegan dessert that satisfies your sweet tooth.",
+      "vegan": true
+    }
+  ]
+}

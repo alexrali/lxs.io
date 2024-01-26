@@ -1,27 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+ 
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --card: 80 1% 96%;
+    --ring: 69 100% 50%;
+    --input: 69 12% 90%;
+    --muted: 69 10% 87%;
+    --accent: 69 8% 86%;
+    --border: 69 12% 90%;
+    --popover: 70 0% 98%;
+    --primary: 69 100% 50%;
+    --secondary: 69 8% 86%;
+    --background: 0 0% 94.12%;
+    --foreground: 69 55% 4%;
+    --destructive: 11 100% 22%;
+    --card-foreground: 69 55% 3%;
+    --muted-foreground: 69 8% 32%;
+    --accent-foreground: 69 8% 26%;
+    --popover-foreground: 69 55% 3%;
+    --primary-foreground: 69 100% 10%;
+    --secondary-foreground: 69 8% 26%;
+    --destructive-foreground: 11 100% 82%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --card: 69 58% 3%;
+    --ring: 69 100% 50%;
+    --input: 69 12% 11%;
+    --muted: 69 10% 13%;
+    --accent: 69 20% 19%;
+    --border: 69 12% 11%;
+    --popover: 69 58% 3%;
+    --primary: 69 100% 50%;
+    --secondary: 69 20% 19%;
+    --background: 69 58% 2%;
+    --foreground: 69 33% 100%;
+    --destructive: 11 100% 46%;
+    --card-foreground: 0 0% 100%;
+    --muted-foreground: 69 8% 68%;
+    --accent-foreground: 69 20% 79%;
+    --popover-foreground: 0 0% 100%;
+    --primary-foreground: 69 100% 10%;
+    --secondary-foreground: 69 20% 79%;
+    --destructive-foreground: 0 0% 100%;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+
+
+
+ @layer base {
+  * {
+    @apply border-border;
+  }
+  /* body {
+    @apply bg-background text-foreground;
+  } */
 }
+
+/* 
+main, nav{
+  @apply max-w-6xl mx-auto my-12;
+} */
+
+h1{
+  @apply scroll-m-20 font-extrabold tracking-tight lg:text-5xl;
+}
+
