@@ -2,17 +2,17 @@ import { useAtom } from "jotai"
 import { atomWithStorage } from "jotai/utils"
 
 import { Style } from "@/components/styles"
-import { Theme } from "@/components/themes"
+//import { Theme } from "@/components/themes"
 
 type Config = {
   style: Style["name"]
-  theme: Theme["name"]
+ // theme: Theme["name"]
   radius: number
 }
 
 const configAtom = atomWithStorage<Config>("config", {
   style: "default",
-  theme: "zinc",
+  //theme: "zinc",
   radius: 1.0,
 })
 
