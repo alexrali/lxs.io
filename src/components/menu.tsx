@@ -26,13 +26,12 @@ import { getProviders } from '@/app/actions/getProviders';
 
 export function Menu() {
 
-  const [providers, setProviders] = useState([]);
+  const [providers, setProviders] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchProviders = async () => {
-      // const providers = await getProviders();
-      const [providers, setProviders] = useState<string[]>([]);
-      setProviders(providers);
+      const fetchedProviders = await getProviders();
+      setProviders(fetchedProviders);
     };
 
     fetchProviders();
