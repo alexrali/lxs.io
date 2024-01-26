@@ -1,6 +1,9 @@
 import { useAtom } from "jotai"
 import { atomWithStorage } from "jotai/utils"
 
+
+//todo. review the use of atomStorage
+
 import { Style } from "@/components/styles"
 //import { Theme } from "@/components/themes"
 
