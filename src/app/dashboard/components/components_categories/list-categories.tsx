@@ -145,7 +145,7 @@ export default function ListCategories({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
             <CardContent>
 
                 <div className="flex-1 text-left">
-                    <div className="text-3xl font-bold tracking-tighter">{avgDoh} días</div>
+                    <div className="text-3xl font-bold tracking-tighter">{Math.round(avgDoh)} días</div>
                     <div className="text-xs font-medium text-muted-foreground tracking-tighter">
                         1 categoria en riesgo
                     </div>
