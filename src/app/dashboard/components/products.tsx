@@ -21,15 +21,15 @@ const Products = () => {
     )
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
-            <div className="col-span-2">
-                {/* This is a card */}
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-8 xl:grid-cols-12 xl:gap-4">
+
+            <div className="col-span-full md:col-span-1 lg:col-span-4 xl:col-span-6">
                 <ProviderEntry filter="Kimberly Clark de Mexico" />
             </div>
 
-            <div className="col-span-3 relative">
+
+            <div className="col-span-full md:col-span-1 lg:col-span-4 xl:col-span-6">
                 <Carousel
-                    // className='w-full overflow-hidden'
                     plugins={[plugin.current]}
                     onMouseEnter={plugin.current.stop}
                     onMouseLeave={plugin.current.reset}
@@ -46,28 +46,29 @@ const Products = () => {
                 </Carousel>
             </div>
 
-            <div className="col-span-3">    
-                {/* This is a card */}
-                <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV                         " />
+            <div className="col-span-full md:col-span-1 lg:col-span-4 xl:col-span-6">
+                <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
             </div>
 
-            {/* This is a card */}
-            <CardTemplate />
-            {/* This is a card */}
-            {/* <CardTemplate /> */}
-            <CardTemplate />
+            <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-3">
+                <CardTemplate />
+            </div>
 
-            <div className="col-span-3">
-                {/* This is a card */}
+            <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-3">
+                <CardTemplate />
+            </div>
+
+            <div className="col-span-full md:col-span-1 lg:col-span-4 xl:col-span-6">
                 <SalesWow />
             </div>
 
-            <div className="col-span-1 space-y-2">
-                {/* This is a card */}
-                <ProviderInventoryValue filter ="KIMBERLY-CLARK DE MEXICO, SAB DE CV                         "/>
+            <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-3">
+                <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
             </div>
 
-            <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV                         " />
+            <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-3">
+                <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+            </div>
         </div>
 
 
