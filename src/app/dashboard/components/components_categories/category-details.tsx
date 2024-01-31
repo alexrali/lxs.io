@@ -147,54 +147,64 @@ export function CategoryDetails({ categoryName }: CategoryDetailsProps) {
 
             </CardHeader>
             <CardContent>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-                    <div className="flex items-start space-x-4">
-                        <div className="flex flex-col self-end">
+
+                <div className="aspect-[16/9]">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+                        <div className="flex items-start space-x-4">
+                            <div className="flex flex-col self-end">
+                                <div className="text-2xl font-bold tracking-tighter">$ 71,829.00</div>
+                                <div className="text-xs font-medium text-muted-foreground tracking-tighter">
+                                    49% mas que el mes pasado
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-span-2">
+                            {/* <div className="h-[90px]"> */}
+                            <div className="h-full">
+                                <ResponsiveContainer width="100%" height="100%" >
+                                    <BarChart data={data}>
+                                        <Bar
+                                            dataKey="goal"
+                                            fill={mode === "dark" ? "#ffffff" : "#000000"}
+                                            fillOpacity={0.2}
+                                        />
+                                    </BarChart>
+                                </ResponsiveContainer>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-5">
+                        <div className="flex flex-col justify-end">
+
                             <div className="text-2xl font-bold tracking-tighter">$ 71,829.00</div>
                             <div className="text-xs font-medium text-muted-foreground tracking-tighter">
-                                49% mas que el mes pasado 
+                                49% mas que el mes pasado
                             </div>
-                        </div> 
-                     </div>   
-                    <div className="col-span-2">
-                        <div className="h-[90px]">
-                            <ResponsiveContainer width="100%" >
-                                <BarChart data={data}>
-                                    <Bar
-                                        dataKey="goal"
-                                        fill={mode === "dark" ? "#ffffff" : "#000000"}
-                                        fillOpacity={0.2}
-                                    />
-                                </BarChart>
-                            </ResponsiveContainer>
                         </div>
-                    </div>
-                </div> 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-5">
-                    <div className="flex flex-col justify-end">
-                       
-                        <div className="text-2xl font-bold tracking-tighter">$ 71,829.00</div>
-                        <div className="text-xs font-medium text-muted-foreground tracking-tighter">
-                            49% mas que el mes pasado
-                        </div>
-                    </div>
-                    <div className="col-span-2">
-                        <div className="h-[90px]">
-                            <ResponsiveContainer width="100%">
-                                <BarChart data={data}>
-                                    <Bar
-                                        dataKey="goal"
-                                        fill="transparent"
-                                        stroke={mode === "dark" ? "#ffffff" : "#d3d6d6"}
-                                        strokeWidth={2}
-                                        radius={[4, 4, 4, 4]}
-                                    />
-                                </BarChart>
-                            </ResponsiveContainer>
+                        <div className="col-span-2">
+                            {/* <div className="h-[90px]"> */}
+                            <div className="h-full">
+                                <ResponsiveContainer>
+                                    <BarChart data={data}>
+                                        <Bar
+                                            dataKey="goal"
+                                            fill="transparent"
+                                            stroke={mode === "dark" ? "#ffffff" : "#d3d6d6"}
+                                            strokeWidth={2}
+                                            radius={[4, 4, 4, 4]}
+                                        />
+                                    </BarChart>             </ResponsiveContainer>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </CardContent>
         </Card>
     );
 }
+
+
+
+
+

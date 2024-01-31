@@ -25,7 +25,7 @@ export default function CardTemplate() {
             </CardHeader>
             <CardContent>
                 <div className="flex-1 text-left">
-                    <div className="text-3xl font-bold tracking-tighter">$71,829.00</div>
+                    <div className="text-2xl font-bold tracking-tighter">$71,829.00</div>
                     <div className="text-xs font-medium text-muted-foreground tracking-tighter">
                         49% mas que el mes pasado
                     </div>

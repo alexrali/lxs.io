@@ -16,6 +16,11 @@ module.exports = {
       },
     },
     extend: {
+      aspectRatio: {
+        '16/9': [16, 9],
+        '21/9': [21, 9],
+        '4/3': [4, 3],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -80,6 +85,7 @@ module.exports = {
   },
   plugins: [
     require("tailwindcss-animate"), 
-    require('@codaworks/react-glow/tailwind')
+    require('@codaworks/react-glow/tailwind'),
+    require('@tailwindcss/aspect-ratio')
   ],
 }

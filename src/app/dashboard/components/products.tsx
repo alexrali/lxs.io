@@ -13,6 +13,15 @@ import CardTemplate from './components_categories/card-template';
 import ListCategories from './components_categories/list-categories';
 import PieChartWithCustomizedActiveShape from './components_categories/provider-inventory-value';
 import ProviderInventoryValue from './components_categories/provider-inventory-value';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { CardsCalendar } from './components_categories/calendar';
+import { CardsMetric } from './components_categories/metric';
+import { Provider } from 'jotai';
+import { CardsStats } from './components_categories/stats';
+import { CardsChat } from './components_categories/chat';
+import { CardsCreateAccount } from './components_categories/create-account';
+import { CardsReportIssue } from './components_categories/report-issue';
+import { CardsDataTable } from './components_categories/data-table';
 
 const Products = () => {
 
@@ -21,54 +30,98 @@ const Products = () => {
     )
 
     return (
-        <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-8 xl:grid-cols-12 xl:gap-4">
+        // <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-8 xl:grid-cols-12">
 
-            <div className="col-span-full md:col-span-1 lg:col-span-4 xl:col-span-6">
-                <ProviderEntry filter="Kimberly Clark de Mexico" />
+
+
+        //     <div className="col-span-full md:col-span-2 lg:col-span-8 xl:col-span-6">
+        //         <ProviderEntry filter="Kimberly Clark de Mexico" />
+        //     </div>
+
+        //     <div className="col-span-full md:col-span-2 lg:col-span-8 xl:col-span-6">
+        //         <Carousel
+        //             plugins={[plugin.current]}
+        //             onMouseEnter={plugin.current.stop}
+        //             onMouseLeave={plugin.current.reset}
+        //         >
+        //             <CarouselContent>
+        //                 {Array.from({ length: 5 }).map((_, index) => (
+        //                     <CarouselItem key={`carousel-item-${index}`} className="h-[295px] mr-4 ">
+        //                         <div className='absolute h-full w-full'>
+        //                             <CategoryDetails categoryName={"Higienico"} />
+        //                         </div>
+        //                     </CarouselItem>
+        //                 ))}
+        //             </CarouselContent>
+        //         </Carousel>
+        //     </div>
+
+        //     <div className="col-span-full md:col-span-1 lg:col-span-4 xl:col-span-6">
+        //         <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+        //     </div>
+
+        //     <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-3">
+        //         <CardTemplate />
+        //     </div>
+
+        //     <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-3">
+        //         <CardTemplate />
+        //     </div>
+
+        //     <div className="col-span-full md:col-span-1 lg:col-span-4 xl:col-span-6">
+        //         <SalesWow />
+        //     </div>
+
+        //     <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-3">
+        //         <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+        //     </div>
+
+        //     <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-3">
+        //         <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+        //     </div>
+        // </div>
+
+        <div className="md:grids-col-2 grid md:gap-4 lg:grid-cols-8 xl:grid-cols-12 xl:gap-4">
+
+            <div className="space-y-4 lg:col-span-4 xl:col-span-6 xl:space-y-4">
+
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+
+                    <div className="md:col-span-3">
+                        <ProviderEntry filter="Kimberly Clark de Mexico" />
+                    </div>
+                    <div className="md:col-span-1">
+                        <CardTemplate />
+                    </div>
+                    <div className="md:col-span-4">
+                        <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+                    </div>
+                    <div className="md:col-span-4">
+                         <SalesWow /> 
+                    </div>
+
+                </div>
+
             </div>
 
-
-            <div className="col-span-full md:col-span-1 lg:col-span-4 xl:col-span-6">
-                <Carousel
-                    plugins={[plugin.current]}
-                    onMouseEnter={plugin.current.stop}
-                    onMouseLeave={plugin.current.reset}
-                >
-                    <CarouselContent>
-                        {Array.from({ length: 5 }).map((_, index) => (
-                            <CarouselItem key={index} className="h-[295px] mr-4 ">
-                                <div className='absolute h-full w-full'>
-                                    <CategoryDetails categoryName={"Higienico"} />
-                                </div>
-                            </CarouselItem>
-                        ))}
-                    </CarouselContent>
-                </Carousel>
+            <div className="space-y-4 sm:space-y-4 lg:col-span-4 xl:col-span-6 xl:space-y-4">
+                 <CardsStats /> 
+                 {/* <SalesWow /> */}
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+                    <div className="space-y-4 xl:space-y-4">
+                    <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+                    </div>
+                    <div className="space-y-4 xl:space-y-4">
+                        {/* <CardsChat />*/}
+                        <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" /> 
+                        <CardsCreateAccount />
+                        <div className="hidden xl:block">
+                            <CardsReportIssue />
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div className="col-span-full md:col-span-1 lg:col-span-4 xl:col-span-6">
-                <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
-            </div>
-
-            <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-3">
-                <CardTemplate />
-            </div>
-
-            <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-3">
-                <CardTemplate />
-            </div>
-
-            <div className="col-span-full md:col-span-1 lg:col-span-4 xl:col-span-6">
-                <SalesWow />
-            </div>
-
-            <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-3">
-                <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
-            </div>
-
-            <div className="col-span-full md:col-span-1 lg:col-span-2 xl:col-span-3">
-                <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
-            </div>
         </div>
 
 
