@@ -93,7 +93,7 @@ const Products = () => {
                     <div className="md:col-span-1">
                         <CardTemplate />
                     </div>
-                    <div className="md:col-span-4">
+                    <div className="md:col-span-2">
                         <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
                     </div>
                     <div className="md:col-span-4">

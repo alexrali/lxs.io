@@ -49,7 +49,7 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
             </CardHeader>
             <CardContent>
 
-                <div className="h-[250px]">
+                <div className="h-[200px]">
                     <ResponsiveContainer width="100%">
                         <LineChart
                             data={data}

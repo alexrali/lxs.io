@@ -86,39 +86,40 @@ export default function ProviderEntry({ filter = "KIMBERLY-CLARK DE MEXICO, SAB 
     const { theme: mode } = useTheme()
 
     return (
-            <Card >
-                <CardHeader>
-                    <CardTitle className="text-2xl font-bold tracking-tighter">{filter}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                    <div className="h-[120px]">
-                        <ResponsiveContainer>
-                            <BarChart data={data} barSize={100} barGap={5}>
-                                <Bar
-                                    dataKey="goal"
-                                    fill="transparent"
-                                    stroke={mode === "dark" ? "#ffffff" : "#d3d6d6"}
-                                    strokeWidth={2}
-                                    radius={[6, 6, 6, 6]}
-                                    stackId="a"
-                                />
-                                <Bar
-                                    dataKey="goal_ly"
-                                    fill={mode === "dark" ? "#ffffff" : "#d7ff00"}
-                                    radius={[6, 6, 6, 6]}
-                                    fillOpacity={.8}
-                                    stackId="a"
-                                />
-                            </BarChart>
-                        </ResponsiveContainer>
-                        </div> 
-                    <div className="mt-3">
-                        {/* <p className="text-1xl">This month your stores have sold All Outlets</p> */}
-                        <p className="text-3xl font-bold tracking-tighter">$ 331,224.74</p>
-                        <p className="text-xs font-medium text-muted-foreground tracking-tighter">% adicional respecto al ejercicio anterior</p>
-                    </div>
+        <Card >
+            <CardHeader>
+                <CardTitle className="text-2xl font-bold tracking-tighter">{filter}</CardTitle>
+            </CardHeader>
+            <CardContent>
+                <div className="h-[110px]">
+                    <ResponsiveContainer width="100%" height="100%" minHeight={0}>
+                        <BarChart data={data} barSize={50} barGap={10}>
+                            <Bar
+                                dataKey="goal"
+                                className="fill-foreground opacity-30"
+                                // stroke={mode === "dark" ? "#d3d6d6" : "#d3d6d6"}
+                                // strokeWidth={2}
+                                radius={[6, 6, 6, 6]}
+                                // stackId="a"
+                            />
+                            <Bar
+                                dataKey="goal_ly"
+                                className="fill-primary"
+                                // fill={mode === "dark" ? "#ffffff" : "#d7ff00"}
+                                radius={[6, 6, 6, 6]}
+                                // fillOpacity={.8}
+                                // stackId="a"
+                            />
+                        </BarChart>
+                    </ResponsiveContainer>
+                </div>
+                <div className="mt-4">
+                    {/* <p className="text-1xl">This month your stores have sold All Outlets</p> */}
+                    <p className="text-3xl font-bold tracking-tighter">$ 331,224.74</p>
+                    <p className="text-xs font-medium text-muted-foreground tracking-tighter">% adicional respecto al ejercicio anterior</p>
+                </div>
 
-                </CardContent>
-            </Card>
+            </CardContent>
+        </Card>
     );
 }

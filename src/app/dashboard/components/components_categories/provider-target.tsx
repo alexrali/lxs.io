@@ -133,7 +133,7 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
 
                 <div className="h-[60px]">
                     <ResponsiveContainer width="100%" height="100%">
-                        <BarChart layout='vertical' data={data}>
+                        <BarChart layout='vertical' data={data} barSize={50} barGap={10}>
                             {/* <defs>
                                 <pattern id="slashPattern" patternUnits="userSpaceOnUse" width={10} height={10}>
                                     <path d="M 0,0 l 10,10" stroke="gray" opacity="0.5" strokeWidth={4} />
@@ -141,23 +141,32 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                             </defs> */}
                             <XAxis type="number" hide={true} />
                             <YAxis type="category" dataKey="name" hide={true} />
-                            <Bar dataKey="LastYear" stackId='a' className='fill-muted' radius={[20, 20, 20, 20]} >
-                            <LabelList
-                                dataKey="LastYear"
-                                position="insideLeft"
-                                offset={10}
-                                formatter={(value: number) => { return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + ' ly' }}
-                                className="text-xs font-bold fill-muted-foreground tracking-tighter"
-                            />
-                            </Bar >
-                            <Bar dataKey="Difference" stackId='a' className='fill-primary' radius={[20, 20, 20, 20]} >
+                            <Bar 
+                                dataKey="LastYear" 
+                                // stackId='a' 
+                                className="fill-foreground opacity-30"
+                                radius={[6, 6, 6, 6]}
+                            >
                                 <LabelList
-                                dataKey="Difference"
-                                position="insideLeft"
-                                offset={10}
-                                formatter={(value: number) => { return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}}
-                                className="text-xs font-bold fill-muted-foreground tracking-tighter"
-                            />
+                                    dataKey="LastYear"
+                                    position="insideLeft"
+                                    offset={10}
+                                    formatter={(value: number) => { return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + ' ly' }}
+                                    className="text-xs font-bold fill-muted-foreground tracking-tighter"
+                                />
+                            </Bar >
+                            <Bar 
+                                dataKey="CurrentYear" 
+                                // stackId='a' 
+                                className='fill-primary' 
+                                radius={[6, 6, 6, 6]} >
+                                <LabelList
+                                    dataKey="CurrentYear"
+                                    position="insideLeft"
+                                    offset={10}
+                                    formatter={(value: number) => { return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}}
+                                    className="text-xs font-bold fill-muted-foreground tracking-tighter"
+                                />
                             </Bar>
 
                             {/* <Bar dataKey="Difference" fill="#eee" />
@@ -168,7 +177,7 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                     </ResponsiveContainer>
                 </div>
 
-                <div className="">
+                <div className="mt-4">
                     <div className="text-3xl font-bold tracking-tighter">
                         {/* {sumMtdCy.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
                          */}
