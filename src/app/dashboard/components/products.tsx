@@ -110,10 +110,12 @@ const Products = () => {
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                     <div className="space-y-4 xl:space-y-4">
                     <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+                    <CardsChat />
                     </div>
                     <div className="space-y-4 xl:space-y-4">
-                        {/* <CardsChat />*/}
+                        
                         <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" /> 
+                        
                         <CardsCreateAccount />
                         <div className="hidden xl:block">
                             <CardsReportIssue />
