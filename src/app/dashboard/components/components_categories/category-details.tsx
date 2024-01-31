@@ -193,7 +193,8 @@ export function CategoryDetails({ categoryName }: CategoryDetailsProps) {
                                             strokeWidth={2}
                                             radius={[4, 4, 4, 4]}
                                         />
-                                    </BarChart>             </ResponsiveContainer>
+                                    </BarChart>             
+                                </ResponsiveContainer>
                             </div>
                         </div>
                     </div>
