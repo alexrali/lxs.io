@@ -204,8 +204,3 @@ export function CategoryDetails({ categoryName }: CategoryDetailsProps) {
         </Card>
     );
 }
-
-
-
-
-

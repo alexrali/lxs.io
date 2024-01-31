@@ -9,56 +9,85 @@ import {
   CardHeader,
   CardTitle,
 } from "components/ui/card"
+import { useEffect, useState } from "react";
+import { getSaleswowData } from "@/app/actions/getWeekSales";
 
-const data = [
-  {
-    average: 400,
-    today: 240,
-  },
-  {
-    average: 300,
-    today: 139,
-  },
-  {
-    average: 200,
-    today: 980,
-  },
-  {
-    average: 278,
-    today: 390,
-  },
-  {
-    average: 189,
-    today: 480,
-  },
-  {
-    average: 239,
-    today: 380,
-  },
-  {
-    average: 349,
-    today: 430,
-  },
-  {
-    average: 278,
-    today: 390,
-  },
-  {
-    average: 20,
-    today: 80,
-  },
-  {
-    average: 500,
-    today: 30,
-  },
-  {
-    average: 149,
-    today: 410,
-  },
-]
+// const data = [
+//   {
+//     average: 400,
+//     today: 240,
+//   },
+//   {
+//     average: 300,
+//     today: 139,
+//   },
+//   {
+//     average: 200,
+//     today: 980,
+//   },
+//   {
+//     average: 278,
+//     today: 390,
+//   },
+//   {
+//     average: 189,
+//     today: 480,
+//   },
+//   {
+//     average: 239,
+//     today: 380,
+//   },
+//   {
+//     average: 349,
+//     today: 430,
+//   },
+//   {
+//     average: 278,
+//     today: 390,
+//   },
+//   {
+//     average: 20,
+//     today: 80,
+//   },
+//   {
+//     average: 500,
+//     today: 30,
+//   },
+//   {
+//     average: 149,
+//     today: 410,
+//   },
+// ]
+
+interface CardsMetricProps {
+  filter?: string
+}
 
 
-export function CardsMetric() {
+interface SaleswowData {
+  week: number;
+  provider: string;
+  sale_cy: number;
+  sale_ly: number;
+}
+
+export function CardsMetric({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV                         " }: CardsMetricProps) {
+
+
+  const [data, setData] = useState<SaleswowData[]>([]);
+
+  useEffect(() => {
+      const fetchData = async () => {
+          try {
+              const response: SaleswowData[] = await getSaleswowData(filter);
+              setData(response);
+          } catch (error) {
+              console.error('Error fetching data:', error);
+          }
+      };
+      fetchData();
+  }, [filter]);
+
 
   return (
     <Card>
@@ -112,7 +141,7 @@ export function CardsMetric() {
               <Line
                 type="monotone"
                 strokeWidth={2}
-                dataKey="average"
+                dataKey="sale_ly"
                 activeDot={{
                   r: 4,
                   style: {
@@ -129,7 +158,7 @@ export function CardsMetric() {
               />
               <Line
                 type="monotone"
-                dataKey="today"
+                dataKey="sale_cy"
                 strokeWidth={2}
                 activeDot={{
                   r: 8,
