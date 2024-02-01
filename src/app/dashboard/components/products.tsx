@@ -125,7 +125,6 @@ const Products = () => {
 
         </div>
 
-
     );
 };
 

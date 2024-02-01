@@ -67,7 +67,7 @@ interface CategoriesResult {
     sumMtdLy: number;
     sumMtdCy: number;
     pctDif: number;
-  }
+}
 
 export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV                         " }: providerTargetProps) {
 
@@ -127,24 +127,33 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
         <Card>
             <CardHeader>
                 <CardTitle className="text-xs font-bold text-muted-foreground">Registro Mensual </CardTitle>
-                <CardDescription className="text-xs font-medium text-muted-foreground tracking-tighter"></CardDescription> 
+                {/* <CardDescription className="text-xs font-medium text-muted-foreground tracking-tighter"></CardDescription> */}
             </CardHeader>
             <CardContent>
 
-                <div className="h-[110px]">
+            <div className="flex-1">
+                    <div className="text-1xl font-bold tracking-tighter">
+                        <CountUp start={0} end={sumMtdCy - sumMtdLy} duration={2.75} separator="," prefix="$" decimals={2} />
+                    </div>
+                    <div className="text-xs font-medium text-muted-foreground tracking-tighter">
+                        {pctDif}% respecto
+                    </div>
+                </div>
+
+                <div className="h-[25px] mt-2">
                     <ResponsiveContainer width="100%" height="100%" minHeight={0}>
                         {/*  layout='vertical'  */}
-                        <BarChart data={data} barSize={25}>
+                        <BarChart data={data} layout="vertical">
                             {/* <defs>
                                 <pattern id="slashPattern" patternUnits="userSpaceOnUse" width={10} height={10}>
                                     <path d="M 0,0 l 10,10" stroke="gray" opacity="0.5" strokeWidth={4} />
                                 </pattern>
                             </defs> */}
-                            {/* <XAxis type="number" hide={true} /> 
-                            <YAxis type="category" dataKey="name" hide={true} /> */}
-                            <Bar 
-                                dataKey="LastYear" 
-                                // stackId='a' 
+                            <XAxis type="number" hide={true} />
+                            <YAxis type="category" dataKey="name" hide={true} />
+                            <Bar
+                                dataKey="LastYear"
+                                stackId='a'
                                 className="fill-foreground opacity-30"
                                 radius={[6, 6, 6, 6]}
                             >
@@ -156,10 +165,10 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                                     className="text-xs font-bold fill-muted-foreground tracking-tighter"
                                 /> */}
                             </Bar >
-                            <Bar 
-                                dataKey="CurrentYear" 
-                                // stackId='a' 
-                                className='fill-primary' 
+                            <Bar
+                                dataKey="Difference"
+                                stackId='a'
+                                className='fill-primary'
                                 radius={[6, 6, 6, 6]} >
                                 {/* <LabelList
                                     dataKey="CurrentYear"
@@ -169,27 +178,24 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                                     className="text-xs font-bold fill-muted-foreground tracking-tighter"
                                 /> */}
                             </Bar>
-                           
-                            {/* <Bar dataKey="Difference" fill="#eee" />
-                            <Bar dataKey="CurrentYear" fill="#888" /> */}
-
-                            {/* <Tooltip ></Tooltip> */}
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
 
-                <div className='mt-2'>
-                    <div className="text-2xl font-bold tracking-tighter">
-                        {/* {sumMtdCy.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
+                {/* <div className='mt-2'>
+                    <div className="text-2xl font-bold tracking-tighter"> */}
+                {/* {sumMtdCy.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
                          */}
-                        <CountUp start={0} end={sumMtdCy - sumMtdLy} duration={2.75} separator="," prefix="$" decimals={2} /> 
+                {/* <CountUp start={0} end={sumMtdCy - sumMtdLy} duration={2.75} separator="," prefix="$" decimals={2} />
                         <span className="text-xs font-bold tracking-tighter"></span>
                     </div>
                     <div className="text-xs font-medium text-muted-foreground tracking-tighter">
-                        {pctDif}% respecto 
-                        {/* <Badge variant="secondary">{pctDif}%</Badge> */}
-                    </div>
-                </div>
+                        {pctDif}% respecto */}
+                {/* <Badge variant="secondary">{pctDif}%</Badge> */}
+                {/* </div>
+                </div> */}
+
+                
 
             </CardContent>
         </Card>

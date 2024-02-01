@@ -51,7 +51,7 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
 
         <Card>
             <CardHeader>
-                <CardTitle className="text-xs font-bold text-muted-foreground"> Objetivo </CardTitle>
+                <CardTitle className="text-xs font-bold text-muted-foreground"> Registro Semanal </CardTitle>
             </CardHeader>
             <CardContent>
 
