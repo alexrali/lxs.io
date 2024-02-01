@@ -131,7 +131,7 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
             </CardHeader>
             <CardContent>
 
-                <div className="h-[115px]">
+                <div className="h-[100px]">
                     <ResponsiveContainer width="100%" height="100%" minHeight={0}>
                         {/*  layout='vertical'  */}
                         <BarChart data={data} barSize={45}>
@@ -169,7 +169,7 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                                     className="text-xs font-bold fill-muted-foreground tracking-tighter"
                                 /> */}
                             </Bar>
-
+                           
                             {/* <Bar dataKey="Difference" fill="#eee" />
                             <Bar dataKey="CurrentYear" fill="#888" /> */}
 
@@ -178,8 +178,8 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                     </ResponsiveContainer>
                 </div>
 
-                <div className="mt-8">
-                    <div className="text-3xl font-bold tracking-tighter">
+                <div >
+                    <div className="text-2xl font-bold tracking-tighter">
                         {/* {sumMtdCy.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
                          */}
                         <CountUp start={0} end={sumMtdCy - sumMtdLy} duration={2.75} separator="," prefix="$" decimals={2} /> 

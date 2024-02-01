@@ -55,7 +55,7 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
             </CardHeader>
             <CardContent>
 
-                <div className="h-[150px]">
+                <div className="h-[260px]">
                     <ResponsiveContainer width="100%">
                         <LineChart
                             data={data}
@@ -166,11 +166,11 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
                         </div>
                     </div> */}
 
-                <div className="mt-4">
-                    {/* <p className="text-1xl">This month your stores have sold All Outlets</p> */}
+                {/* <div className="mt-4">
+                 
                     <p className="text-3xl font-bold tracking-tighter">$ 331,224.74</p>
                     <p className="text-xs font-medium text-muted-foreground tracking-tighter">% adicional respecto al ejercicio anterior</p>
-                </div>
+                </div> */}
 
             </CardContent>
         </Card>

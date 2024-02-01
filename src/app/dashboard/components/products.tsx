@@ -95,10 +95,7 @@ const Products = () => {
                         <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
                     </div>
 
-                    <div className="md:col-span-2">
-                        <CardTemplate />
-                    </div>
-                    <div className="md:col-span-4 xl:col-span-4">
+                    <div className="md:col-span-4 xl:col-span-6">
                         <SalesWow />
                     </div>
 
