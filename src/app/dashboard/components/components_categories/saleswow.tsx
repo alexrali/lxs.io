@@ -55,16 +55,16 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
             </CardHeader>
             <CardContent>
 
-                <div className="h-[260px]">
+                <div className="h-[140px]">
                     <ResponsiveContainer width="100%">
                         <LineChart
                             data={data}
-                            margin={{
-                                top: 5,
-                                right: 10,
-                                left: 10,
-                                bottom: 0,
-                            }}
+                                // margin={{
+                                //     top: 5,
+                                //     right: 10,
+                                //     left: 10,
+                                //     bottom: 0,
+                                // }}
                         >
 
                             <YAxis hide={true} domain={[dataMin - padding, dataMax + padding]} />

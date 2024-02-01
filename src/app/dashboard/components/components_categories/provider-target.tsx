@@ -131,10 +131,10 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
             </CardHeader>
             <CardContent>
 
-                <div className="h-[100px]">
+                <div className="h-[110px]">
                     <ResponsiveContainer width="100%" height="100%" minHeight={0}>
                         {/*  layout='vertical'  */}
-                        <BarChart data={data} barSize={45}>
+                        <BarChart data={data} barSize={25}>
                             {/* <defs>
                                 <pattern id="slashPattern" patternUnits="userSpaceOnUse" width={10} height={10}>
                                     <path d="M 0,0 l 10,10" stroke="gray" opacity="0.5" strokeWidth={4} />
@@ -178,15 +178,15 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                     </ResponsiveContainer>
                 </div>
 
-                <div >
+                <div className='mt-2'>
                     <div className="text-2xl font-bold tracking-tighter">
                         {/* {sumMtdCy.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
                          */}
                         <CountUp start={0} end={sumMtdCy - sumMtdLy} duration={2.75} separator="," prefix="$" decimals={2} /> 
-                        <span className="text-xs font-bold tracking-tighter"> mtd</span>
+                        <span className="text-xs font-bold tracking-tighter"></span>
                     </div>
                     <div className="text-xs font-medium text-muted-foreground tracking-tighter">
-                        {pctDif}% respecto al año anterior
+                        {pctDif}% respecto 
                         {/* <Badge variant="secondary">{pctDif}%</Badge> */}
                     </div>
                 </div>
