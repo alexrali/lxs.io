@@ -126,21 +126,22 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
     return (
         <Card>
             <CardHeader>
-                <CardTitle className="text-xs font-bold text-muted-foreground">Objetivo Comercial 
-                </CardTitle>
+                <CardTitle className="text-xs font-bold text-muted-foreground">Registro Mensual </CardTitle>
+                <CardDescription className="text-xs font-medium text-muted-foreground tracking-tighter"></CardDescription> 
             </CardHeader>
             <CardContent>
 
-                <div className="h-[50px]">
-                    <ResponsiveContainer width="90%">
-                        <BarChart layout='vertical' data={data} barCategoryGap={45}>
+                <div className="h-[115px]">
+                    <ResponsiveContainer width="100%" height="100%" minHeight={0}>
+                        {/*  layout='vertical'  */}
+                        <BarChart data={data} barSize={45}>
                             {/* <defs>
                                 <pattern id="slashPattern" patternUnits="userSpaceOnUse" width={10} height={10}>
                                     <path d="M 0,0 l 10,10" stroke="gray" opacity="0.5" strokeWidth={4} />
                                 </pattern>
                             </defs> */}
-                            <XAxis type="number" hide={true} />
-                            <YAxis type="category" dataKey="name" hide={true} />
+                            {/* <XAxis type="number" hide={true} /> 
+                            <YAxis type="category" dataKey="name" hide={true} /> */}
                             <Bar 
                                 dataKey="LastYear" 
                                 // stackId='a' 
@@ -177,8 +178,8 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                     </ResponsiveContainer>
                 </div>
 
-                <div className="mt-3">
-                    <div className="text-2xl font-bold tracking-tighter">
+                <div className="mt-8">
+                    <div className="text-3xl font-bold tracking-tighter">
                         {/* {sumMtdCy.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
                          */}
                         <CountUp start={0} end={sumMtdCy - sumMtdLy} duration={2.75} separator="," prefix="$" decimals={2} /> 

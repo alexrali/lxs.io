@@ -87,16 +87,18 @@ const Products = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 gap-4">
 
-                    <div className="md:col-span-3 xl:col-span-4">
+                    <div className="md:col-span-4 xl:col-span-4">
                         <ProviderEntry filter="Kimberly Clark de Mexico" />
                     </div>
-                    <div className="md:col-span-1 xl:col-span-2">
+
+                    <div className="md:col-span-2 xl:col-span-2">
                         <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
                     </div>
-                    <div className="md:col-span-1 xl:col-span-2">
+
+                    <div className="md:col-span-2">
                         <CardTemplate />
                     </div>
-                    <div className="md:col-span-3 xl:col-span-4">
+                    <div className="md:col-span-4 xl:col-span-4">
                         <SalesWow />
                     </div>
 

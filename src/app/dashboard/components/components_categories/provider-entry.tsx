@@ -91,7 +91,7 @@ export default function ProviderEntry({ filter = "KIMBERLY-CLARK DE MEXICO, SAB 
                 <CardTitle className="text-2xl font-bold tracking-tighter">{filter}</CardTitle>
             </CardHeader>
             <CardContent>
-                <div className="h-[110px]">
+                <div className="h-[120px]">
                     <ResponsiveContainer width="100%" height="100%" minHeight={0}>
                         <BarChart data={data} barSize={50} barGap={10}>
                             <Bar
