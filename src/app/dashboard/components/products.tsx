@@ -85,19 +85,19 @@ const Products = () => {
 
             <div className="space-y-4 lg:col-span-4 xl:col-span-6 xl:space-y-4">
 
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 gap-4">
 
-                    <div className="md:col-span-3">
+                    <div className="md:col-span-3 xl:col-span-4">
                         <ProviderEntry filter="Kimberly Clark de Mexico" />
                     </div>
-                    <div className="md:col-span-1">
-                        <CardTemplate />
-                    </div>
-                    <div className="md:col-span-2">
+                    <div className="md:col-span-1 xl:col-span-2">
                         <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
                     </div>
-                    <div className="md:col-span-4">
-                         <SalesWow /> 
+                    <div className="md:col-span-1 xl:col-span-2">
+                        <CardTemplate />
+                    </div>
+                    <div className="md:col-span-3 xl:col-span-4">
+                        <SalesWow />
                     </div>
 
                 </div>
@@ -105,17 +105,17 @@ const Products = () => {
             </div>
 
             <div className="space-y-4 sm:space-y-4 lg:col-span-4 xl:col-span-6 xl:space-y-4">
-                 <CardsStats /> 
-                 {/* <SalesWow /> */}
+                <CardsStats />
+                {/* <SalesWow /> */}
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
                     <div className="space-y-4 xl:space-y-4">
-                    <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
-                    <CardsChat />
+                        <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+                        <CardsChat />
                     </div>
                     <div className="space-y-4 xl:space-y-4">
-                        
-                        <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" /> 
-                        
+
+                        <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+
                         <CardsCreateAccount />
                         <div className="hidden xl:block">
                             <CardsReportIssue />

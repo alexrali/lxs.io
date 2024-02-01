@@ -10,7 +10,7 @@ import {
     CardTitle
 } from "@/components/ui/card";
 
-import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
+import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { getSaleswowData } from '@/app/actions/getWeekSales';
 
 interface SaleswowProps {
@@ -41,6 +41,12 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
         fetchData();
     }, [filter]);
 
+
+    const dataMin = Math.min(...data.map(item => item.sale_cy));
+    const dataMax = Math.max(...data.map(item => item.sale_cy));
+    const range = dataMax - dataMin;
+    const padding = range * 0.3;
+
     return (
 
         <Card>
@@ -49,7 +55,7 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
             </CardHeader>
             <CardContent>
 
-                <div className="h-[200px]">
+                <div className="h-[150px]">
                     <ResponsiveContainer width="100%">
                         <LineChart
                             data={data}
@@ -60,6 +66,9 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
                                 bottom: 0,
                             }}
                         >
+
+                            <YAxis hide={true} domain={[dataMin - padding, dataMax + padding]} />
+
                             <Tooltip
                                 content={({ active, payload, label }) => {
 
@@ -156,6 +165,13 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
                             <p className="text-sm text-gray-400">0.28 less than last year.</p>
                         </div>
                     </div> */}
+
+                <div className="mt-4">
+                    {/* <p className="text-1xl">This month your stores have sold All Outlets</p> */}
+                    <p className="text-3xl font-bold tracking-tighter">$ 331,224.74</p>
+                    <p className="text-xs font-medium text-muted-foreground tracking-tighter">% adicional respecto al ejercicio anterior</p>
+                </div>
+
             </CardContent>
         </Card>
     );

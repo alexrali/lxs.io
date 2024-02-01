@@ -131,9 +131,9 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
             </CardHeader>
             <CardContent>
 
-                <div className="h-[60px]">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <BarChart layout='vertical' data={data} barSize={50} barGap={10}>
+                <div className="h-[50px]">
+                    <ResponsiveContainer width="90%">
+                        <BarChart layout='vertical' data={data} barCategoryGap={45}>
                             {/* <defs>
                                 <pattern id="slashPattern" patternUnits="userSpaceOnUse" width={10} height={10}>
                                     <path d="M 0,0 l 10,10" stroke="gray" opacity="0.5" strokeWidth={4} />
@@ -147,26 +147,26 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                                 className="fill-foreground opacity-30"
                                 radius={[6, 6, 6, 6]}
                             >
-                                <LabelList
+                                {/* <LabelList
                                     dataKey="LastYear"
                                     position="insideLeft"
                                     offset={10}
                                     formatter={(value: number) => { return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' }) + ' ly' }}
                                     className="text-xs font-bold fill-muted-foreground tracking-tighter"
-                                />
+                                /> */}
                             </Bar >
                             <Bar 
                                 dataKey="CurrentYear" 
                                 // stackId='a' 
                                 className='fill-primary' 
                                 radius={[6, 6, 6, 6]} >
-                                <LabelList
+                                {/* <LabelList
                                     dataKey="CurrentYear"
                                     position="insideLeft"
                                     offset={10}
                                     formatter={(value: number) => { return value.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}}
                                     className="text-xs font-bold fill-muted-foreground tracking-tighter"
-                                />
+                                /> */}
                             </Bar>
 
                             {/* <Bar dataKey="Difference" fill="#eee" />
@@ -177,11 +177,11 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                     </ResponsiveContainer>
                 </div>
 
-                <div className="mt-4">
-                    <div className="text-3xl font-bold tracking-tighter">
+                <div className="mt-3">
+                    <div className="text-2xl font-bold tracking-tighter">
                         {/* {sumMtdCy.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}
                          */}
-                        <CountUp start={0} end={sumMtdCy} duration={2.75} separator="," prefix="$" decimals={2} /> 
+                        <CountUp start={0} end={sumMtdCy - sumMtdLy} duration={2.75} separator="," prefix="$" decimals={2} /> 
                         <span className="text-xs font-bold tracking-tighter"> mtd</span>
                     </div>
                     <div className="text-xs font-medium text-muted-foreground tracking-tighter">
