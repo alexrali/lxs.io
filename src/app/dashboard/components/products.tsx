@@ -121,37 +121,41 @@ const Products = () => {
         //     </div>
         // </div>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-12">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-12">
 
-            <div className="grid gap-4 md:col-span-2 lg:col-span-4 xl:col-span-6">
+            <div className="grid gap-4 md:col-span-2 lg:col-span-3 xl:col-span-5">
 
-                <div className="md:col-span-2 lg:col-span-4 xl:col-span-6">
+                <div className="md:col-span-2 lg:col-span-3 xl:col-span-5">
+                    <CardTemplate />
+                </div>
+
+                <div className="md:col-span-2 lg:col-span-3 xl:col-span-5">
                     <ProviderEntry filter="Kimberly Clark de Mexico" />
                 </div>
-                <div className="md:col-span-1 lg:col-span-2 xl:col-span-2">
-                    <CardTemplate /> 
-                </div>
-                <div className="md:col-span-1 lg:col-span-2 xl:col-span-2">
+                {/* <div className="">
                     <CardTemplate />
-                </div> 
-                <div className="md:col-span-1 lg:col-span-2 xl:col-span-2">
-                    <CardTemplate /> 
                 </div>
-                
+                <div className="">
+                    <CardTemplate />
+                </div> */}
+                <div className="md:col-span-2 lg:col-span-3 xl:col-span-5">
+                    <SalesWow />
+                </div>
+
             </div>
 
-            <div className="grid gap-4 md:col-span-2 lg:col-span-4 xl:col-span-6">
+            {/* <div >
                 <CardTemplate />
                 <CardTemplate />
                 <CardTemplate />
-            </div>
+            </div> */}
 
 
             {/* <div className="col-span-1 md:col-span-1 ">
                 <ProviderEntry filter="Kimberly Clark de Mexico" />
             </div> */}
 
-            <div className="col-span-1 md:col-span-2" >
+            {/* <div className="col-span-1 md:col-span-2" >
                 <CardTemplate />
             </div>
 
@@ -161,7 +165,7 @@ const Products = () => {
 
             <div className="col-span-1 md:col-span-1">
                 <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
-            </div>
+            </div> */}
 
             {/* <div className="col-span-1 md:col-span-1 lg:col-span-1">
                 <div className="grid grid-cols-2 gap-4">
@@ -176,13 +180,13 @@ const Products = () => {
             </div> */}
 
 
-            <CardTemplate />
+            {/* <CardTemplate />
             <CardTemplate />
             <CardTemplate />
 
 
 
-            <CardTemplate />
+            <CardTemplate /> */}
 
             {/* <div className="col-span-2 md:col-span-2 lg:col-span-2">
                 <CardTemplate />
