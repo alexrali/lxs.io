@@ -121,83 +121,47 @@ const Products = () => {
         //     </div>
         // </div>
 
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-12">
-
-            <div className="grid gap-4 md:col-span-2 xl:col-span-4">
-
-            
-                <div className="md:col-span-2 xl:col-span-4">
-                    <ProviderEntry filter="Kimberly Clark de Mexico" />
-                </div>
-
-                <div className="md:col-span-2 xl:col-span-4">
-                    <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
-                </div>
-                {/* <div className="">
-                    <CardTemplate />
-                </div>
-                <div className="">
-                    <CardTemplate />
-                </div> */}
-                <div className="md:col-span-2 xl:col-span-4">
-                    <SalesWow />
-                </div>
-
-            </div>
-
-            {/* <div className="col-span-1 md:col-span-1 ">
+        <div className="grid gap-4 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-12">
+            <div className="col-span-full md:col-span-4">
                 <ProviderEntry filter="Kimberly Clark de Mexico" />
-            </div> */}
-
-            {/* <div className="col-span-1 md:col-span-2" >
+            </div>
+            <div className="col-span-full sm:col-span-6 md:col-span-3">
                 <CardTemplate />
             </div>
-
-            <div className="col-span-1 md:col-span-2">
+            <div className="col-span-full sm:col-span-6 md:col-span-3">
+                <CardTemplate />
+            </div>
+            <div className="col-span-full md:col-span-6">
+                <CardTemplate />
+            </div>
+            <div className="col-span-full sm:col-span-6 md:col-span-3">
+                <CardTemplate />
+            </div>
+            <div className="col-span-full sm:col-span-6 md:col-span-3">
+                <CardTemplate />
+            </div>
+            <div className="col-span-full md:col-span-6">
+                <CardTemplate />
+            </div>
+            <div className="col-span-full md:col-span-6">
                 <SalesWow />
             </div>
-
-            <div className="col-span-1 md:col-span-1">
+            <div className="col-span-full md:col-span-5 order-2 md:order-2 lg:order-1">
+                <CardTemplate />
+            </div>
+            <div className="col-span-full sm:col-span-6 md:col-span-2">
                 <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
-            </div> */}
-
-            {/* <div className="col-span-1 md:col-span-1 lg:col-span-1">
-                <div className="grid grid-cols-2 gap-4">
-                    <div className="col-span-2 md:col-span-1">
-                        <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
-                    </div>
-                    <div className="col-span-2 md:col-span-1">
-                        <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
-                    </div>
-
-                </div>
-            </div> */}
-
-
-            {/* <CardTemplate />
-            <CardTemplate />
-            <CardTemplate />
-
-
-
-            <CardTemplate /> */}
-
-            {/* <div className="col-span-2 md:col-span-2 lg:col-span-2">
+            </div>
+            <div className="col-span-full sm:col-span-6 md:col-span-4 order-1 md:order-1 lg:order-2">
                 <CardTemplate />
             </div>
-
-            <div className="col-span-1 md:col-span-1 lg:col-span-1">
+            <div className="col-span-full md:col-span-8 order-3">
                 <CardTemplate />
             </div>
-            <div className="col-span-1 md:col-span-1 lg:col-span-1">
+            <div className="col-span-full md:col-span-4 order-3">
                 <CardTemplate />
             </div>
-            <div className="col-span-2 md:col-span-2 lg:col-span-2">
-                <CardTemplate />
-            </div> */}
-
         </div>
-
     );
 };
 

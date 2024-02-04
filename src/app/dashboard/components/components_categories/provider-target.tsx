@@ -126,14 +126,14 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
     return (
         <Card>
             <CardHeader>
-                <CardTitle className="text-xs font-bold text-muted-foreground">Registro Mensual </CardTitle>
+                <CardTitle className="text-xs font-bold text-muted-foreground">Registro Mensual</CardTitle>
                 {/* <CardDescription className="text-xs font-medium text-muted-foreground tracking-tighter"></CardDescription> */}
             </CardHeader>
             <CardContent>
-                <div className="h-[55px]">
+                <div className="h-[60px]">
                     <ResponsiveContainer width="100%" height="100%" minHeight={0}>
                         {/*  layout='vertical'  */}
-                        <BarChart data={data} layout="vertical">
+                        <BarChart data={data} >
                             {/* <defs>
                                 <pattern id="slashPattern" patternUnits="userSpaceOnUse" width={10} height={10}>
                                     <path d="M 0,0 l 10,10" stroke="gray" opacity="0.5" strokeWidth={4} />
@@ -141,6 +141,7 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                             </defs> */}
                             <XAxis type="number" hide={true} />
                             <YAxis type="category" dataKey="name" hide={true} />
+                           
                             <Bar
                                 dataKey="LastYear"
                                 //stackId='a'
@@ -156,7 +157,7 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                                 /> */}
                             </Bar >
                             <Bar
-                                dataKey="CurrentYear"
+                                dataKey="Difference"
                                 //stackId='a'
                                 className='fill-primary'
                                 radius={[6, 6, 6, 6]} >
