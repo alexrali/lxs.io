@@ -22,6 +22,7 @@ import { CardsChat } from './components_categories/chat';
 import { CardsCreateAccount } from './components_categories/create-account';
 import { CardsReportIssue } from './components_categories/report-issue';
 import { CardsDataTable } from './components_categories/data-table';
+import Categories from './categories';
 
 const Products = () => {
 
@@ -81,47 +82,121 @@ const Products = () => {
         //     </div>
         // </div>
 
-        <div className="md:grids-col-2 grid md:gap-4 lg:grid-cols-8 xl:grid-cols-12 xl:gap-4">
+        // <div className="md:grids-col-2 grid md:gap-4 lg:grid-cols-8 xl:grid-cols-12 xl:gap-4">
 
-            <div className="space-y-4 lg:col-span-4 xl:col-span-6 xl:space-y-4">
+        //     <div className="space-y-4 lg:col-span-4 xl:col-span-6 xl:space-y-4">
 
-                <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 gap-4">
+        //         <div className="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 gap-4">
 
-                    <div className="md:col-span-4 xl:col-span-4">
-                        <ProviderEntry filter="Kimberly Clark de Mexico" />
-                    </div>
+        //             <div className="md:col-span-4 xl:col-span-4">
+        //                 <ProviderEntry filter="Kimberly Clark de Mexico" />
+        //             </div>
 
-                    <div className="md:col-span-2 xl:col-span-2">
-                        <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
-                    </div>
+        //             <div className="md:col-span-2 xl:col-span-2">
+        //                 <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+        //             </div>
 
-                    <div className="md:col-span-4 xl:col-span-6">
-                        <SalesWow />
-                    </div>
+        //             <div className="md:col-span-4 xl:col-span-6">
+        //                 <SalesWow />
+        //             </div>
 
+        //         </div>
+        //     </div>
+
+        //     <div className="space-y-4 lg:col-span-4 xl:col-span-6 xl:space-y-4">
+        //          <CardsStats /> 
+        //         <SalesWow /> 
+
+        //         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2">
+
+        //             <div className="space-y-4 xl:space-y-4 lg:col-span-2 xl:col-span-3">
+        //                 <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+        //             </div>
+
+        //             <div className="space-y-4 xl:space-y-4 lg:col-span-3 xl:col-span-3">
+        //                 <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+        //             </div>
+
+        //         </div>
+        //     </div>
+        // </div>
+
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-12">
+
+            <div className="grid gap-4 md:col-span-2 lg:col-span-4 xl:col-span-6">
+
+                <div className="md:col-span-2 lg:col-span-4 xl:col-span-6">
+                    <ProviderEntry filter="Kimberly Clark de Mexico" />
                 </div>
-
+                <div className="md:col-span-1 lg:col-span-2 xl:col-span-2">
+                    <CardTemplate /> 
+                </div>
+                <div className="md:col-span-1 lg:col-span-2 xl:col-span-2">
+                    <CardTemplate />
+                </div> 
+                <div className="md:col-span-1 lg:col-span-2 xl:col-span-2">
+                    <CardTemplate /> 
+                </div>
+                
             </div>
 
-            <div className="space-y-4 sm:space-y-4 lg:col-span-4 xl:col-span-6 xl:space-y-4">
-                <CardsStats />
-                {/* <SalesWow /> */}
-                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
-                    <div className="space-y-4 xl:space-y-4">
+            <div className="grid gap-4 md:col-span-2 lg:col-span-4 xl:col-span-6">
+                <CardTemplate />
+                <CardTemplate />
+                <CardTemplate />
+            </div>
+
+
+            {/* <div className="col-span-1 md:col-span-1 ">
+                <ProviderEntry filter="Kimberly Clark de Mexico" />
+            </div> */}
+
+            <div className="col-span-1 md:col-span-2" >
+                <CardTemplate />
+            </div>
+
+            <div className="col-span-1 md:col-span-2">
+                <SalesWow />
+            </div>
+
+            <div className="col-span-1 md:col-span-1">
+                <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+            </div>
+
+            {/* <div className="col-span-1 md:col-span-1 lg:col-span-1">
+                <div className="grid grid-cols-2 gap-4">
+                    <div className="col-span-2 md:col-span-1">
                         <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
-                        <CardsChat />
                     </div>
-                    <div className="space-y-4 xl:space-y-4">
-
+                    <div className="col-span-2 md:col-span-1">
                         <ListCategories filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
-
-                        <CardsCreateAccount />
-                        <div className="hidden xl:block">
-                            <CardsReportIssue />
-                        </div>
                     </div>
+
                 </div>
+            </div> */}
+
+
+            <CardTemplate />
+            <CardTemplate />
+            <CardTemplate />
+
+
+
+            <CardTemplate />
+
+            {/* <div className="col-span-2 md:col-span-2 lg:col-span-2">
+                <CardTemplate />
             </div>
+
+            <div className="col-span-1 md:col-span-1 lg:col-span-1">
+                <CardTemplate />
+            </div>
+            <div className="col-span-1 md:col-span-1 lg:col-span-1">
+                <CardTemplate />
+            </div>
+            <div className="col-span-2 md:col-span-2 lg:col-span-2">
+                <CardTemplate />
+            </div> */}
 
         </div>
 

@@ -15,8 +15,11 @@ import { CategoryDetails } from "./category-details"
 import { CaretUpIcon, CaretDownIcon } from "@radix-ui/react-icons";
 import { getCategories } from "@/app/actions/getCategories";
 import { Bar, BarChart, CartesianGrid, Cell, ComposedChart, LabelList, Legend, Line, LineChart, RadialBar, RadialBarChart, ResponsiveContainer, XAxis, YAxis, Tooltip, TooltipProps } from "recharts";
+import { ResponsiveMarimekko } from '@nivo/marimekko';
+
 import { Badge, badgeVariants } from "@/components/ui/badge";
 import { useTheme } from "next-themes";
+
 
 interface Category {
     // date: Date;
@@ -37,22 +40,22 @@ interface CustomTooltipProps {
     active: boolean;
     payload: any[]; // Replace 'any' with the actual type of your payload
     label: string;
-  }
+}
 
-  interface CategoriesResult {
+interface CategoriesResult {
     categories: Category[];
     sumIcp: number;
     avgDoh: number;
     // Include other properties returned by getCategories...
-  }
-  
+}
 
-  interface StarProps {
+
+interface StarProps {
     x: number;
     y: number;
     width: number;
     height: number;
-  }
+}
 
 interface ListCategoriesProps {
     filter: string;
@@ -134,6 +137,15 @@ export default function ListCategories({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
         fetchCategories();
     }, [filter]);
 
+    const totalValue = categories.reduce((total, category) => total + (category.icp || 0), 0);
+
+    const data = categories.map(item => ({
+        ...item,
+        id: item.category,
+        value: item.icp ? (item.icp / totalValue) * 100 : 0, // calculate percentage
+        avgDoh: item.doh
+    }));
+
 
     return (
         <Card>
@@ -144,50 +156,84 @@ export default function ListCategories({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
             </CardHeader>
             <CardContent>
 
-                <div className="flex-1 text-left">
-                    <div className="text-3xl font-bold tracking-tighter">{Math.round(avgDoh)} días</div>
-                    <div className="text-xs font-medium text-muted-foreground tracking-tighter">
-                        1 categoria en riesgo
-                    </div>
-                </div>
+                <div className="h-[250px]">
 
-                <div className="h-[270px] mt-4">
+                    {/* <ResponsiveMarimekko
+                        data={data}
+                        id="id"
+                        value="value"
+                        dimensions={[{ id: 'avgDoh', value: 'avgDoh' }]}
+
+                        layout="horizontal"
+                        offset="diverging"
+                        innerPadding={3}
+                        axisTop={null}
+                        
+                        enableGridY={false}
+                        margin={{ top: 10, right: 20, bottom: 60, left: 20 }}
+
+                        colors={ () => 'rgba(136, 136, 136, 0.2)' }
+                        borderColor={{ theme: 'background' }}
+
+                        axisBottom={{
+                            tickSize: 0,
+                            tickPadding: 2,
+                            tickRotation: 0,
+                            legend: 'doh',
+                            legendPosition: 'middle',
+                            legendOffset: 30, 
+                            renderTick: (tick) => {
+                                return (
+                                    <g transform={`translate(${tick.x},${tick.y})`}>
+                                        <text
+                                            x={0}
+                                            y={0}
+                                            dy={16}
+                                            textAnchor="middle"
+
+                                            style={{
+                                                fontSize: 10,
+                                                fontFamily: 'sans-serif',
+                                                fill: 'rgba(136, 136, 136, 0.5)'
+                                            }}
+                                            
+                                            transform="rotate(0)"
+                                        >
+                                            {tick.value}
+                                        </text>
+                                    </g>
+                                );
+                            }
+                        }}
+                        
+                    /> */}
+
                     <ResponsiveContainer width="100%" height="100%" minHeight="100%">
-                        <BarChart layout='vertical' data={categories} barSize={100} >
+                        <BarChart layout='vertical' data={categories} barSize={50} >
                             <XAxis type="number" dataKey="doh" hide={true} className='fill-border text-xs' opacity="0.5" />
                             <YAxis type="category" dataKey="category" hide={true} />
-                            {/* <Tooltip content={<CustomTooltip />} cursor={
-                                {
-                                    fill: '#d3d6d6',
-                                    stroke: '#d3d6d6',
-                                    opacity: 0.5,
-                                    radius: 10,
-                                }
-                            } /> */}
+
+
                             <Bar
                                 stackId="a"
                                 dataKey="doh"
-                                fill="#d3d6d6" // muted color
-                                stroke={mode === "dark" ? "#ffffff" : "#d3d6d6"}
-                                strokeOpacity={0.1}
-                                //opacity="0.25"
-                                strokeWidth={2}
+                                className="fill-border-foreground opacity-75"
                                 radius={[8, 8, 8, 8]}
                             >
+
                                 {
                                     categories.map((entry, index) => (
                                         <Cell
                                             cursor="pointer"
                                             fill={entry.doh && entry.doh < 10 ? '#db9595' : index === activeIndex ? '#23D7FF' : MUTED_COLOR} // change color based on doh value
                                             key={`cell-${index}`}
-                                            //opacity={index === activeIndex ? 1 : 0.25}
                                             onMouseOver={() => setActiveIndex(index)}
                                             onMouseOut={() => setActiveIndex(null)}
                                         />
                                     ))
                                 }
                                 <LabelList
-                                    dataKey="category"    
+                                    dataKey="category"
                                     position="insideLeft"
                                     offset={5}
                                     className="text-xs font-bold fill-muted-foreground tracking-tighter"
@@ -202,6 +248,15 @@ export default function ListCategories({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                             </Bar>
                         </BarChart>
                     </ResponsiveContainer>
+
+
+                </div>
+
+                <div className="mt-2">
+                    <div className="text-2xl font-bold tracking-tighter">{Math.round(avgDoh)} días</div>
+                    <div className="text-xs font-medium text-muted-foreground tracking-tighter">
+                        1 categoria en riesgo
+                    </div>
                 </div>
             </CardContent>
         </Card>

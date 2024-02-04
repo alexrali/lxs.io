@@ -45,7 +45,7 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
     const dataMin = Math.min(...data.map(item => item.sale_cy));
     const dataMax = Math.max(...data.map(item => item.sale_cy));
     const range = dataMax - dataMin;
-    const padding = range * 0.3;
+    const padding = range * 0.1;
 
     return (
 
@@ -55,16 +55,16 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
             </CardHeader>
             <CardContent>
 
-                <div className="h-[140px]">
+                <div className="h-[100px]">
                     <ResponsiveContainer width="100%">
                         <LineChart
                             data={data}
-                                // margin={{
-                                //     top: 5,
-                                //     right: 10,
-                                //     left: 10,
-                                //     bottom: 0,
-                                // }}
+                        // margin={{
+                        //     top: 5,
+                        //     right: 10,
+                        //     left: 10,
+                        //     bottom: 0,
+                        // }}
                         >
 
                             <YAxis hide={true} domain={[dataMin - padding, dataMax + padding]} />
@@ -166,11 +166,10 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
                         </div>
                     </div> */}
 
-                {/* <div className="mt-4">
-                 
+                <div >
                     <p className="text-3xl font-bold tracking-tighter">$ 331,224.74</p>
                     <p className="text-xs font-medium text-muted-foreground tracking-tighter">% adicional respecto al ejercicio anterior</p>
-                </div> */}
+                </div>
 
             </CardContent>
         </Card>

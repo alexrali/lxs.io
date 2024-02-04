@@ -62,7 +62,7 @@ const renderActiveShape = (props: any) => {
                 {`ICP ${value.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}`}
             </text>
 
-            <text x={cx} y={cy} textAnchor="middle" dy='10' className="text-2xl font-bold tracking-tighter" fill={fill}>
+            <text x={cx} y={cy} textAnchor="middle" dy='10' className="text-1xl font-bold tracking-tighter" fill={fill}>
                 {`${(percent * 100).toFixed(2)}%`}
             </text>
 
@@ -96,7 +96,7 @@ interface CategoriesResult {
     sumIcp: number;
     avgDoh: number;
     // Include other properties returned by getCategories...
-  }
+}
 
 export default function ProviderInventoryValue({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV                         " }: ProviderInventoryValueProps) {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -121,7 +121,7 @@ export default function ProviderInventoryValue({ filter = "KIMBERLY-CLARK DE MEX
             setSumIcp(sumIcp);
             //setAvgDoh(avgDoh);
         };
-    
+
         fetchCategories();
     }, [filter]);
     return (
@@ -132,17 +132,7 @@ export default function ProviderInventoryValue({ filter = "KIMBERLY-CLARK DE MEX
                 </CardTitle>
             </CardHeader>
             <CardContent>
-            <div className="flex-1 text-left">
-                    <div className="text-3xl font-bold tracking-tighter">
-                        {/* {sumIcp.toLocaleString('en-US', { style: 'currency', currency: 'USD' })} */}
-                        <CountUp start={0} end={sumIcp} duration={2.75} separator="," prefix="$" decimals={2} />
-
-                        </div>
-                    <div className="text-xs font-medium text-muted-foreground tracking-tighter">
-                        49% mas que el mes pasado
-                    </div>
-                </div>
-                <div className="h-[285px]">
+                <div className="h-[200px]">
                     <ResponsiveContainer width="100%" height="100%">
                         <PieChart>
                             <Pie
@@ -151,8 +141,8 @@ export default function ProviderInventoryValue({ filter = "KIMBERLY-CLARK DE MEX
                                 data={categories}
                                 cx="50%"
                                 cy="50%"
-                                innerRadius={80}
-                                outerRadius={105}
+                                innerRadius={50}
+                                outerRadius={70}
                                 className='fill-border-foreground'
                                 dataKey="icp"
                                 paddingAngle={1}
@@ -161,7 +151,7 @@ export default function ProviderInventoryValue({ filter = "KIMBERLY-CLARK DE MEX
                             >
                                 {categories.map((entry, index) => (
                                     <Cell
-                                       
+
                                         key={`cell-${index}`}
                                         fill={index === activeIndex ? "#23D7FF" : MUTED_COLOR}
                                         opacity={index === activeIndex ? 1 : 0.25}
@@ -172,6 +162,14 @@ export default function ProviderInventoryValue({ filter = "KIMBERLY-CLARK DE MEX
                         </PieChart>
                     </ResponsiveContainer>
                 </div>
+
+                <div className='mt-2' >
+                    <p className="text-2xl font-bold tracking-tighter">
+                        <CountUp start={0} end={sumIcp} duration={2.75} separator="," prefix="$" decimals={2} />
+                    </p>
+                    <p className="text-xs font-medium text-muted-foreground tracking-tighter">% adicional respecto</p>
+                </div>
+
             </CardContent>
         </Card>
     );
