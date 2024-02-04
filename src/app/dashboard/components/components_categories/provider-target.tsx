@@ -130,17 +130,7 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                 {/* <CardDescription className="text-xs font-medium text-muted-foreground tracking-tighter"></CardDescription> */}
             </CardHeader>
             <CardContent>
-
-            <div className="flex-1">
-                    <div className="text-1xl font-bold tracking-tighter">
-                        <CountUp start={0} end={sumMtdCy - sumMtdLy} duration={2.75} separator="," prefix="$" decimals={2} />
-                    </div>
-                    <div className="text-xs font-medium text-muted-foreground tracking-tighter">
-                        {pctDif}% respecto
-                    </div>
-                </div>
-
-                <div className="h-[25px] mt-2">
+                <div className="h-[55px]">
                     <ResponsiveContainer width="100%" height="100%" minHeight={0}>
                         {/*  layout='vertical'  */}
                         <BarChart data={data} layout="vertical">
@@ -153,7 +143,7 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                             <YAxis type="category" dataKey="name" hide={true} />
                             <Bar
                                 dataKey="LastYear"
-                                stackId='a'
+                                //stackId='a'
                                 className="fill-foreground opacity-30"
                                 radius={[6, 6, 6, 6]}
                             >
@@ -166,8 +156,8 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                                 /> */}
                             </Bar >
                             <Bar
-                                dataKey="Difference"
-                                stackId='a'
+                                dataKey="CurrentYear"
+                                //stackId='a'
                                 className='fill-primary'
                                 radius={[6, 6, 6, 6]} >
                                 {/* <LabelList
@@ -195,7 +185,16 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                 {/* </div>
                 </div> */}
 
-                
+
+                <div className="flex-1">
+                    <div className="text-3xl font-bold tracking-tighter">
+                        <CountUp start={0} end={sumMtdCy - sumMtdLy} duration={2.75} separator="," prefix="$" decimals={2} />
+                    </div>
+                    <div className="text-xs font-medium text-muted-foreground tracking-tighter">
+                        {pctDif}% respecto
+                    </div>
+                </div>
+
 
             </CardContent>
         </Card>
