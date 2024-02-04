@@ -123,13 +123,22 @@ const Products = () => {
 
         <div className="grid gap-4 grid-cols-1 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-12">
 
-            <div className="grid gap-4 md:col-span-2 lg:col-span-3 xl:col-span-5">
+            <div className="grid gap-4 md:col-span-2 xl:col-span-4">
 
-                <div className="md:col-span-2 lg:col-span-3 xl:col-span-5">
+                <div className="md:col-span-1 xl:col-span-2">
                     <CardTemplate />
                 </div>
 
-                <div className="md:col-span-2 lg:col-span-3 xl:col-span-5">
+                <div className="md:col-span-1 xl:col-span-2">
+                    <CardTemplate />
+                </div>
+
+                <div className="md:col-span-2 xl:col-span-4">
+                    <CardTemplate />
+                </div>
+
+            
+                <div className="md:col-span-2 xl:col-span-4">
                     <ProviderEntry filter="Kimberly Clark de Mexico" />
                 </div>
                 {/* <div className="">
@@ -138,18 +147,11 @@ const Products = () => {
                 <div className="">
                     <CardTemplate />
                 </div> */}
-                <div className="md:col-span-2 lg:col-span-3 xl:col-span-5">
+                <div className="md:col-span-2 xl:col-span-4">
                     <SalesWow />
                 </div>
 
             </div>
-
-            {/* <div >
-                <CardTemplate />
-                <CardTemplate />
-                <CardTemplate />
-            </div> */}
-
 
             {/* <div className="col-span-1 md:col-span-1 ">
                 <ProviderEntry filter="Kimberly Clark de Mexico" />
