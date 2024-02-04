@@ -12,6 +12,7 @@ import {
 
 import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 import { getSaleswowData } from '@/app/actions/getWeekSales';
+import CountUp from 'react-countup';
 
 interface SaleswowProps {
     filter?: string
@@ -66,9 +67,7 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
                         //     bottom: 0,
                         // }}
                         >
-
                             <YAxis hide={true} domain={[dataMin - padding, dataMax + padding]} />
-
                             <Tooltip
                                 content={({ active, payload, label }) => {
 
@@ -119,6 +118,7 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
                                 type="monotone"
                                 strokeWidth={2}
                                 dataKey="sale_ly"
+                                className='fill-foreground opacity-30'
                                 activeDot={{
                                     r: 4,
                                     style: {
@@ -126,27 +126,23 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
                                         opacity: 0.25
                                     },
                                 }}
-                                style={
-                                    {
-                                        stroke: "#d3d3d3",
-                                        opacity: 0.25,
-                                    } as React.CSSProperties
-                                }
+                                
                             />
                             <Line
                                 type="monotone"
                                 dataKey="sale_cy"
                                 strokeWidth={2}
+                                className="fill-primary"
                                 activeDot={{
                                     r: 8,
                                     style: { fill: "#adfa1d", opacity: 1 },
                                 }}
-                                style={
-                                    {
-                                        stroke: "#adfa1d",
-                                        opacity: 1.25,
-                                    } as React.CSSProperties
-                                }
+                                // style={
+                                //     {
+                                //         stroke: "#adfa1d",
+                                //         opacity: 1.25,
+                                //     } as React.CSSProperties
+                                // }
                             />
 
                         </LineChart>
@@ -167,7 +163,10 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
                     </div> */}
 
                 <div >
-                    <p className="text-3xl font-bold tracking-tighter">$ 331,224.74</p>
+                    <p className="text-3xl font-bold tracking-tighter">
+                        
+                        <CountUp start={0} end={dataMax} duration={2.75} separator="," prefix="$" decimals={2} />
+                    </p>
                     <p className="text-xs font-medium text-muted-foreground tracking-tighter">% adicional respecto al ejercicio anterior</p>
                 </div>
 
