@@ -56,7 +56,7 @@ export function SalesWow({ filter = "KIMBERLY-CLARK DE MEXICO, SAB DE CV        
             </CardHeader>
             <CardContent>
 
-                <div className="h-[100px]">
+                <div className="h-[205px]">
                     <ResponsiveContainer width="100%">
                         <LineChart
                             data={data}
