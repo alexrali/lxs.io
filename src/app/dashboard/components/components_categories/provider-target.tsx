@@ -130,10 +130,10 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                 {/* <CardDescription className="text-xs font-medium text-muted-foreground tracking-tighter"></CardDescription> */}
             </CardHeader>
             <CardContent>
-                <div className="h-[72px]">
+                <div className="h-[88px]">
                     <ResponsiveContainer width="100%" height="100%" minHeight={0}>
                         {/*  layout='vertical'  */}
-                        <BarChart data={data} layout="vertical">
+                        <BarChart data={data} layout="vertical" barGap={5} barSize={20}>
                             {/* <defs>
                                 <pattern id="slashPattern" patternUnits="userSpaceOnUse" width={10} height={10}>
                                     <path d="M 0,0 l 10,10" stroke="gray" opacity="0.5" strokeWidth={4} />

@@ -89,6 +89,7 @@ export default function ProviderEntry({ filter = "KIMBERLY-CLARK DE MEXICO, SAB 
         <Card >
             <CardHeader>
                 {/* <CardTitle className="text-2xl font-bold tracking-tighter">{filter}</CardTitle> */}
+                <CardTitle className="text-xs font-bold text-muted-foreground">Perspectiva Anual</CardTitle>
             </CardHeader>
             <CardContent>
                 <div className="h-[80px]">
