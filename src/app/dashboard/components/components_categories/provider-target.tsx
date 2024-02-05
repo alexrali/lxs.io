@@ -130,17 +130,17 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                 {/* <CardDescription className="text-xs font-medium text-muted-foreground tracking-tighter"></CardDescription> */}
             </CardHeader>
             <CardContent>
-                <div className="h-[60px]">
+                <div className="h-[72px]">
                     <ResponsiveContainer width="100%" height="100%" minHeight={0}>
                         {/*  layout='vertical'  */}
-                        <BarChart data={data} >
+                        <BarChart data={data} barSize={35} >
                             {/* <defs>
                                 <pattern id="slashPattern" patternUnits="userSpaceOnUse" width={10} height={10}>
                                     <path d="M 0,0 l 10,10" stroke="gray" opacity="0.5" strokeWidth={4} />
                                 </pattern>
                             </defs> */}
-                            <XAxis type="number" hide={true} />
-                            <YAxis type="category" dataKey="name" hide={true} />
+                            {/* <XAxis type="number" hide={true} />
+                            <YAxis type="category" dataKey="name" hide={true} /> */}
                            
                             <Bar
                                 dataKey="LastYear"
@@ -157,7 +157,7 @@ export default function ProviderTarget({ filter = "KIMBERLY-CLARK DE MEXICO, SAB
                                 /> */}
                             </Bar >
                             <Bar
-                                dataKey="Difference"
+                                dataKey="CurrentYear"
                                 //stackId='a'
                                 className='fill-primary'
                                 radius={[6, 6, 6, 6]} >

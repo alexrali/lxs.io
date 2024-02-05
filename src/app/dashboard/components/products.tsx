@@ -122,44 +122,81 @@ const Products = () => {
         // </div>
 
         <div className="grid gap-4 md:grid-cols-4 lg:grid-cols-8 xl:grid-cols-12">
+            {/* Row 1 */}
             <div className="col-span-full md:col-span-4">
                 <ProviderEntry filter="Kimberly Clark de Mexico" />
             </div>
-            <div className="col-span-full sm:col-span-6 md:col-span-3">
+            <div className="col-span-6 md:col-span-2">
+                <ProviderTarget filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
+            </div>
+            <div className="col-span-6 md:col-span-6">
                 <CardTemplate />
             </div>
-            <div className="col-span-full sm:col-span-6 md:col-span-3">
-                <CardTemplate />
-            </div>
-            <div className="col-span-full md:col-span-6">
-                <CardTemplate />
-            </div>
-            <div className="col-span-full sm:col-span-6 md:col-span-3">
-                <CardTemplate />
-            </div>
-            <div className="col-span-full sm:col-span-6 md:col-span-3">
-                <CardTemplate />
-            </div>
-            <div className="col-span-full md:col-span-6">
-                <CardTemplate />
-            </div>
+
+            {/* Row 2 */}
             <div className="col-span-full md:col-span-6">
                 <SalesWow />
             </div>
-            <div className="col-span-full md:col-span-5 order-2 md:order-2 lg:order-1">
-                <CardTemplate />
-            </div>
-            <div className="col-span-full sm:col-span-6 md:col-span-2">
+            <div className="col-span-full sm:col-span-6 md:col-span-3">
                 <ProviderInventoryValue filter="KIMBERLY-CLARK DE MEXICO, SAB DE CV" />
             </div>
-            <div className="col-span-full sm:col-span-6 md:col-span-4 order-1 md:order-1 lg:order-2">
+            <div className="col-span-full sm:col-span-6 md:col-span-3">
                 <CardTemplate />
             </div>
-            <div className="col-span-full md:col-span-8 order-3">
-                <CardTemplate />
+
+
+            {/* Row 3 */}
+            <div className="grid md:grid-cols-6">
+                <div className="col-span-full md:col-span-6">
+                    <CardTemplate />
+                </div>
             </div>
-            <div className="col-span-full md:col-span-4 order-3">
-                <CardTemplate />
+
+            {/* Row 4 */}
+            <div className="grid md:grid-cols-3">
+                <div className="col-span-full sm:col-span-6 md:col-span-3">
+                    <CardTemplate />
+                </div>
+                <div className="col-span-full sm:col-span-6 md:col-span-3">
+                    <CardTemplate />
+                </div>
+            </div>
+
+            {/* Row 5 */}
+            <div className="grid md:grid-cols-6">
+                <div className="col-span-full md:col-span-6">
+                    <CardTemplate />
+                </div>
+                <div className="col-span-full md:col-span-6">
+                    <CardTemplate />
+                </div>
+            </div>
+
+            {/* Row 6 */}
+            <div className="grid md:grid-cols-3">
+                <div className="col-span-full sm:col-span-6 md:col-span-3">
+                    <CardTemplate />
+                </div>
+            </div>
+
+            {/* Row 7 */}
+            <div className="grid md:grid-cols-5 lg:grid-cols-2">
+                <div className="col-span-full md:col-span-5 order-2 md:order-2 lg:order-1">
+                    <CardTemplate />
+                </div>
+                <div className="col-span-full sm:col-span-6 md:col-span-4 order-1 md:order-1 lg:order-2">
+                    <CardTemplate />
+                </div>
+            </div>
+
+            {/* Row 8 */}
+            <div className="grid md:grid-cols-8 lg:grid-cols-4">
+                <div className="col-span-full md:col-span-8 order-3">
+                    <CardTemplate />
+                </div>
+                <div className="col-span-full md:col-span-4 order-3">
+                    <CardTemplate />
+                </div>
             </div>
         </div>
     );
