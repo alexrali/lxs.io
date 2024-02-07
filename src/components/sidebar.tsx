@@ -1,5 +1,8 @@
+'use client'
+
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { TooltipProvider } from "@/components/ui/tooltip"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
 import Link from "next/link"
@@ -7,11 +10,32 @@ import { usePathname } from "next/navigation"
 
 import path from "path"
 
+import {
+  AlertCircle,
+  Archive,
+  ArchiveX,
+  File,
+  Inbox,
+  MessagesSquare,
+  PenBox,
+  Search,
+  Send,
+  ShoppingCart,
+  Trash2,
+  Users2,
+} from "lucide-react"
+import { useState } from "react"
+import { Nav } from "./nav"
+
 interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
   //playlists: Playlist[]
 }
 
 export function Sidebar({ className }: SidebarProps) {
+
+  const defaultCollapsed = true
+
+  const [isCollapsed, setIsCollapsed] = useState(defaultCollapsed)
 
   const pathname = usePathname()
 
@@ -19,11 +43,12 @@ export function Sidebar({ className }: SidebarProps) {
     <div className={cn("pb-12", className)}>
       <div className="space-y-4 py-4 pt-10">
 
+      <TooltipProvider delayDuration={0}>
         <div className="px-3 py-2 pt-10">
           {/* <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
             Discovery
           </h2> */}
-          <div className="space-y-1">
+          {/* <div className="space-y-1">
             <Link href="/">
               <Button
                 variant={pathname === '/' ? 'secondary' : 'ghost'}
@@ -87,9 +112,52 @@ export function Sidebar({ className }: SidebarProps) {
               </svg>
               Canales
             </Button>
-          </div>
-        </div>
+          </div> */}
 
+          <Nav
+            isCollapsed={isCollapsed}
+            links={[
+              {
+                title: "Inbox",
+                label: "128",
+                icon: Inbox,
+                variant: "default",
+              },
+              {
+                title: "Drafts",
+                label: "9",
+                icon: File,
+                variant: "ghost",
+              },
+              {
+                title: "Sent",
+                label: "",
+                icon: Send,
+                variant: "ghost",
+              },
+              {
+                title: "Junk",
+                label: "23",
+                icon: ArchiveX,
+                variant: "ghost",
+              },
+              {
+                title: "Trash",
+                label: "",
+                icon: Trash2,
+                variant: "ghost",
+              },
+              {
+                title: "Archive",
+                label: "",
+                icon: Archive,
+                variant: "ghost",
+              },
+            ]}
+          />
+
+        </div>
+      </TooltipProvider>
         {/* <div className="px-3 py-2">
           <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
             Library
@@ -215,7 +283,7 @@ export function Sidebar({ className }: SidebarProps) {
                   {playlist}
                 </Button>
               ))} */}
-            {/* </div>
+        {/* </div>
           </ScrollArea> */}
         {/* </div> */}
 

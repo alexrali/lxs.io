@@ -1,4 +1,4 @@
- 'use client'
+'use client'
 
 import React, { useState } from 'react';
 
@@ -21,12 +21,17 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                 <Menu />
                 <div className="border-t flex flex-col flex-grow">
                     <div className="bg-background flex-grow flex">
-                        <div className={classNames("transition-all duration-500 ease-in-out overflow-hidden border-r", { 'w-64 opacity-100': isSidebarVisible, 'w-0 opacity-0': !isSidebarVisible })}>
+                        <div className=
+                            {
+                                classNames("transition-all duration-500 ease-in-out overflow-hidden border-r",
+                                    { 'w-16 opacity-100': isSidebarVisible, 'w-0 opacity-0': !isSidebarVisible }
+                                )
+                            }>
                             <Sidebar />
                         </div>
-                        <div className="flex-grow p-6">
+                        <main className="flex-grow p-6">
                             {children}
-                        </div>
+                        </main>
                     </div>
                 </div>
             </SidebarContext.Provider>
