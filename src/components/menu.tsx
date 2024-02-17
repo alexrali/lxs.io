@@ -49,7 +49,7 @@ export function Menu() {
   const { setTheme } = useTheme()
 
   return (
-    <Menubar className="rounded-none border-b border-none px-2 lg:px-4">
+    <Menubar className="rounded-none border-b border-none px-4 lg:px-3">
       <MenubarMenu>
         <MenubarTrigger>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-4 h-4">

@@ -23,6 +23,8 @@ import {
   ShoppingCart,
   Trash2,
   Users2,
+  BarChart3,
+  BarChartBig,
 } from "lucide-react"
 import { useState } from "react"
 import { Nav } from "./nav"
@@ -120,37 +122,43 @@ export function Sidebar({ className }: SidebarProps) {
               {
                 title: "Inbox",
                 label: "128",
-                icon: Inbox,
+                icon: BarChartBig,
+                ref: "/dashboard",
                 variant: "default",
               },
               {
                 title: "Drafts",
                 label: "9",
                 icon: File,
+                ref: "#", 
                 variant: "ghost",
               },
               {
                 title: "Sent",
                 label: "",
                 icon: Send,
+                ref: "#", 
                 variant: "ghost",
               },
               {
                 title: "Junk",
                 label: "23",
                 icon: ArchiveX,
+                ref: "#", 
                 variant: "ghost",
               },
               {
                 title: "Trash",
                 label: "",
                 icon: Trash2,
+                ref: "#", 
                 variant: "ghost",
               },
               {
                 title: "Archive",
                 label: "",
                 icon: Archive,
+                ref: "#", 
                 variant: "ghost",
               },
             ]}

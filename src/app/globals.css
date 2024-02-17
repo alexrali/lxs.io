@@ -25,7 +25,7 @@
     --primary-foreground: 0 0% 7.84%;
     --secondary-foreground: 223 13% 29%;
     --destructive-foreground: 0 0% 100%;
-    --radius: 0.75rem;
+    --radius: 0.50rem;
   }
 
   .dark {
@@ -48,26 +48,12 @@
     --primary-foreground: 0 0% 7.84%;
     --secondary-foreground: 223 5% 73%;
     --destructive-foreground: 0 0% 100%;
-    --radius: 0.75rem;
+    --radius: 0.50rem;
   }
 }
-
 
  @layer base {
   * {
     @apply border-border;
   }
-  /* body {
-    @apply bg-background text-foreground;
-  } */
 }
-
-/* 
-main, nav{
-  @apply max-w-6xl mx-auto my-12;
-} */
-
-h1{
-  @apply scroll-m-20 font-extrabold tracking-tight lg:text-5xl;
-}
-

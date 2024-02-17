@@ -29,7 +29,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
                             }>
                             <Sidebar />
                         </div>
-                        <main className="flex-grow p-6">
+                        <main className="flex-grow pt-4">
                             {children}
                         </main>
                     </div>
